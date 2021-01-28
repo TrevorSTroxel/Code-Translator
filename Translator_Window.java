@@ -29,7 +29,6 @@ public class Translator_Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String input = TRV.TR_Text_Area.getText();
         input.toLowerCase(); //for easier coding
-        PWM.File_Creation_Panel(); // call panel settings to set them up correctly
 
         if(e.getSource() == TRV.TR_Enter)
         {

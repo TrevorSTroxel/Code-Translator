@@ -7,6 +7,7 @@ public class String_To_Code {
 
     public void Translation(String INPUT2) 
     {
+        PWM.Method_Runner();
         if (INPUT2.contains("new file")) 
         {
             PWM.Input_Window(TRV.Folder_Panel);
