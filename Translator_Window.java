@@ -10,6 +10,10 @@ public class Translator_Window extends JFrame implements ActionListener {
     Panel_Window_Creation PWC = new Panel_Window_Creation();
     
 
+    /**
+     * This method will be better set up later. 
+     * Right now we just needed a mock window to test out our code
+     */
     public void New_Window()
     {
         TRV.Translator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

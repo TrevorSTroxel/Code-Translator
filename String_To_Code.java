@@ -7,9 +7,9 @@ public class String_To_Code {
 
     public void Translation(String INPUT2) 
     {
-        
         if (INPUT2.contains("new file")) 
         {
+            
             if (INPUT2.contains("say")) {
                 // say();
             }
