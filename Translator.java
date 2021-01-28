@@ -23,6 +23,16 @@ public class Translator {
      * count: (iterate) add variable
      */
 
+    /**
+     * We may not end up using this method in particular, but it does serve as a
+     * good starting point
+     * 
+     * @param file_directory
+     * @param file_name
+     * @param file_path
+     * @param class_name
+     */
+
     public static void Create_File(String file_directory, String file_name, String file_path, String class_name) {
         try {
             String[] FileFix = file_name.split(" ");
