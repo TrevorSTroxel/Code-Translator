@@ -28,6 +28,8 @@ import java.awt.event.ActionListener;
  */
 
 public class Create implements ActionListener {
+	TR_Variables TRV = new TR_Variables();
+
 	/**
 	 * This method when called will grab the file path the user has chosen and
 	 * create a file inside the desired location. If the user does not geve the file
@@ -43,7 +45,7 @@ public class Create implements ActionListener {
 	 * @param file_directory
 	 * @param file_name
 	 */
-	public static void create_file(String file_directory, String file_name) {
+	public void create_file(String file_directory, String file_name) {
 		try {
 			File new_file = new File(file_directory + "\\" + file_name);
 			new_file.getParentFile().mkdirs();
@@ -62,17 +64,17 @@ public class Create implements ActionListener {
 	 * the file
 	 * 
 	 * This does not delete anything that is already in the file, all it does is add
-	 * to the top of the file It also adds a public static void main(String[] args)
-	 * to the file, so if a user wants to run the program, they are able to.
+	 * to the top of the file It also adds a public void main(String[] args) to the
+	 * file, so if a user wants to run the program, they are able to.
 	 * 
 	 * @param file_path
 	 * @param class_name
 	 */
-	public static void creatr_class(String file_path, String class_name) {
+	public void creatr_class(String file_path, String class_name) {
 		try {
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-			fileContents.add("public class " + class_name + "{\n public static void main(String[] args) {\n\n} \n}");
+			fileContents.add("public class " + class_name + "{\n public  void main(String[] args) {\n\n} \n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
@@ -90,7 +92,7 @@ public class Create implements ActionListener {
 	 * @param return_type
 	 * @param method_name
 	 */
-	public static void create_method(String File_Directory, String return_type, String method_name) {
+	public void create_method(String File_Directory, String return_type, String method_name) {
 		try {
 			List<String> fileContents = new ArrayList<>(
 					Files.readAllLines(Paths.get(File_Directory), StandardCharsets.UTF_8));
@@ -125,7 +127,7 @@ public class Create implements ActionListener {
 	 * @param File_dir
 	 * @param Contents_To_Add
 	 */
-	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
+	public void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
 		Method_Name = WordsOnly(Method_Name); // used to help search for
 		try {
 			List<String> fileContents = new ArrayList<>(
@@ -154,25 +156,25 @@ public class Create implements ActionListener {
 	 * @param simple
 	 * @return String
 	 */
-	public static String WordsOnly(String simple) {
+	public String WordsOnly(String simple) {
 		String Clean = simple.replaceAll("[^a-zA-Z0-9]", "");
 		return Clean;
 	}
 
-	public static void Input_Window(JPanel JP) {
-		TR_Variables.Input_Window.add(JP);
-		TR_Variables.Input_Window.setVisible(true);
+	public void Input_Window(JPanel JP) {
+		TRV.Input_Window.add(JP);
+		TRV.Input_Window.setVisible(true);
 	}
 
-	public static void File_Creation_Panel() {
-		TR_Variables.Folder_Panel.add(TR_Variables.Folder_Path_Button);
-		TR_Variables.Folder_Panel.add(TR_Variables.Folder_Path_Text_Area);
+	public void File_Creation_Panel() {
+		TRV.Folder_Panel.add(TRV.Folder_Path_Button);
+		TRV.Folder_Panel.add(TRV.Folder_Path_Text_Area);
 
-		TR_Variables.Folder_Panel.add(TR_Variables.File_Name_Button);
-		TR_Variables.Folder_Panel.add(TR_Variables.File_Name_Text_Area);
+		TRV.Folder_Panel.add(TRV.File_Name_Button);
+		TRV.Folder_Panel.add(TRV.File_Name_Text_Area);
 
-		TR_Variables.File_Name_Button.addActionListener(this);
-		TR_Variables.Folder_Path_Button.addActionListener(this);
+		TRV.File_Name_Button.addActionListener(this);
+		TRV.Folder_Path_Button.addActionListener(this);
 	}
 
 	@Override
