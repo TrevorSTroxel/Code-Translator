@@ -24,7 +24,7 @@ public class Translator_Window extends JFrame implements ActionListener {
 
         if(e.getSource() == TR_Variables.TR_Enter)
         {
-            English_Translator.Translation(input);
+            String_To_Code.Translation(input);
         }
 
     }
