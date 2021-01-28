@@ -1,41 +1,44 @@
 
 public class English_Translator 
 {
-    public static String input = WindowVar.P1_Text_Field.getText();
-    public static String[] Spliting_Words = input.split(" ");
-    
-    public static void Translation()
+    // public static String[] Spliting_Words = input.split(" ");
+
+
+    public static void Translation(String INPUT2)
     {
-        if (input.contains("new file"))
+
+        if (INPUT2.contains("new file"))
         {
             //call file creatation method
-            if (input.contains("say"))
+            //triggers a new window window to ask for the file directory, anf file name
+
+            if (INPUT2.contains("say"))
             {
-               say();
+               //say();
             }
         }
 
-        else if (input.contains("add to file"))
+        else if (INPUT2.contains("add to file"))
         {
-            if (input.contains("say"))
+            if (INPUT2.contains("say"))
             {
-                say();
+                //say();
             }
         }
     }
     
 
-    public static String say()
-    {
-        int index = input.indexOf("say");
-        String string_contents = new String();
-        for (int i = index + 1; i < input.length(); i++)
-        {
-            if(!Spliting_Words[i].equals("new"))
-            {
-                string_contents += Spliting_Words[i] + " ";
-            }
-        }
-        return string_contents;
-    }
+    // public static String say()
+    // {
+    //     int index = input.indexOf("say");
+    //     String string_contents = new String();
+    //     for (int i = index + 1; i < input.length(); i++)
+    //     {
+    //         if(!Spliting_Words[i].equals("new"))
+    //         {
+    //             string_contents += Spliting_Words[i] + " ";
+    //         }
+    //     }
+    //     return string_contents;
+    // }
 }

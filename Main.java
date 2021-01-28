@@ -10,7 +10,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        PrimaryWindow mainWindow = new PrimaryWindow(); //generic object to use
-        mainWindow.WindowCreation(); //this is what starts the whole program
+        Translator_Window TRW = new Translator_Window();
+        TRW.New_Window();
     }
 }
