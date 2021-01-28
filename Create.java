@@ -7,6 +7,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JPanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  * These are all the online sources that we used to help create this program in
  * thos file: reference: https://www.w3schools.com/java/java_files_create.asp
@@ -22,7 +27,7 @@ import java.util.List;
  * @version 1.0
  */
 
-public class Create {
+public class Create implements ActionListener {
 	/**
 	 * This method when called will grab the file path the user has chosen and
 	 * create a file inside the desired location. If the user does not geve the file
@@ -39,11 +44,6 @@ public class Create {
 	 * @param file_name
 	 */
 	public static void create_file(String file_directory, String file_name) {
-		// if (!(file_name.contains(".txt")) || !(file_name.contains(".java"))) { //this
-		// checks to see if the input it got has an extention or not
-		// String[] FileFix = file_name.split(" ");
-		// file_name = FileFix[0] + ".txt";
-		// }
 		try {
 			File new_file = new File(file_directory + "\\" + file_name);
 			new_file.getParentFile().mkdirs();
@@ -70,7 +70,8 @@ public class Create {
 	 */
 	public static void creatr_class(String file_path, String class_name) {
 		try {
-			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
+			List<String> fileContents = new ArrayList<>(
+					Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
 			fileContents.add("public class " + class_name + "{\n public static void main(String[] args) {\n\n} \n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
 		} catch (IOException e) {
@@ -156,5 +157,27 @@ public class Create {
 	public static String WordsOnly(String simple) {
 		String Clean = simple.replaceAll("[^a-zA-Z0-9]", "");
 		return Clean;
+	}
+
+	public static void Input_Window(JPanel JP) {
+		TR_Variables.Input_Window.add(JP);
+		TR_Variables.Input_Window.setVisible(true);
+	}
+
+	public static void File_Creation_Panel() {
+		TR_Variables.Folder_Panel.add(TR_Variables.Folder_Path_Button);
+		TR_Variables.Folder_Panel.add(TR_Variables.Folder_Path_Text_Area);
+
+		TR_Variables.Folder_Panel.add(TR_Variables.File_Name_Button);
+		TR_Variables.Folder_Panel.add(TR_Variables.File_Name_Text_Area);
+
+		TR_Variables.File_Name_Button.addActionListener(this);
+		TR_Variables.Folder_Path_Button.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
 	}
 }
