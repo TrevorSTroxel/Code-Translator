@@ -7,7 +7,7 @@ public class Translator_Window extends JFrame implements ActionListener {
     private static final long serialVersionUID = 1L;
     TR_Variables TRV = new TR_Variables();
     String_To_Code STC = new String_To_Code();
-    Panel_Window_Creation PWC = new Panel_Window_Creation();
+    Panel_Window_Methods PWM = new Panel_Window_Methods();
     
 
     /**
@@ -29,7 +29,7 @@ public class Translator_Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String input = TRV.TR_Text_Area.getText();
         input.toLowerCase(); //for easier coding
-        PWC.File_Creation_Panel(); // call panel settings to set them up correctly
+        PWM.File_Creation_Panel(); // call panel settings to set them up correctly
 
         if(e.getSource() == TRV.TR_Enter)
         {

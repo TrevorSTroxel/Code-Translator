@@ -1,7 +1,7 @@
 
 public class String_To_Code {
     TR_Variables TRV = new TR_Variables();
-    Create CR = new Create();
+    Panel_Window_Methods PWM = new Panel_Window_Methods();
     // public static String[] Spliting_Words = input.split(" ");
     
 
@@ -9,7 +9,7 @@ public class String_To_Code {
     {
         if (INPUT2.contains("new file")) 
         {
-            
+            PWM.Input_Window(TRV.Folder_Panel);
             if (INPUT2.contains("say")) {
                 // say();
             }

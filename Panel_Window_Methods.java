@@ -1,12 +1,15 @@
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Panel_Window_Creation implements ActionListener{
+public class Panel_Window_Methods implements ActionListener{
     // This file will store where out panels settings are stored
     TR_Variables TRV = new TR_Variables();
 	public void Input_Window(JPanel JP) {
+		TRV.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		TRV.Input_Window.setSize(500,500);
 		TRV.Input_Window.add(JP);
 		TRV.Input_Window.setVisible(true);
 	}
