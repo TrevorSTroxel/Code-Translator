@@ -7,10 +7,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JPanel;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * These are all the online sources that we used to help create this program in
@@ -27,7 +24,7 @@ import java.awt.event.ActionListener;
  * @version 1.0
  */
 
-public class Create implements ActionListener {
+public class Create{
 	TR_Variables TRV = new TR_Variables();
 
 	/**
@@ -161,25 +158,5 @@ public class Create implements ActionListener {
 		return Clean;
 	}
 
-	public void Input_Window(JPanel JP) {
-		TRV.Input_Window.add(JP);
-		TRV.Input_Window.setVisible(true);
-	}
 
-	public void File_Creation_Panel() {
-		TRV.Folder_Panel.add(TRV.Folder_Path_Button);
-		TRV.Folder_Panel.add(TRV.Folder_Path_Text_Area);
-
-		TRV.Folder_Panel.add(TRV.File_Name_Button);
-		TRV.Folder_Panel.add(TRV.File_Name_Text_Area);
-
-		TRV.File_Name_Button.addActionListener(this);
-		TRV.Folder_Path_Button.addActionListener(this);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-
-	}
 }

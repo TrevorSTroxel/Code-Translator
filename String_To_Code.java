@@ -7,14 +7,9 @@ public class String_To_Code {
 
     public void Translation(String INPUT2) 
     {
-        // call panel settings to set them up correctly
-        if (INPUT2.contains("new file")) {
-            // call method for new window to appear and grab input
-            // CR.Input_Window(TRV.Folder_Panel);
-            // call file creatation method
-            // Create.create_file();
-            // triggers a new window window to ask for the file directory, any file name
-
+        
+        if (INPUT2.contains("new file")) 
+        {
             if (INPUT2.contains("say")) {
                 // say();
             }
