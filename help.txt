@@ -1,0 +1,154 @@
+These are some instructions and tips on how to use this program.
+
+IMPORTANT NOTES
+* Spelling errors: Typos can wreck this program. so be very cautious of typos. 
+* Keep in mind that the order in which you put words are important, so keep that in mind!
+
+If you do not know anything about coding and want to know what programs use to code,
+we reccomend using VSCode, as this is the most user friendly to new users.
+
+If you already have VSCode and want to know what extensions are helpful for programming java,
+Look into this extentions called: Java Extension Pack.
+It comes with several other extions that will help in your programming experience with java.
+
+After you have finish making your first program, 
+try opening up the file with VSCode and running the program to make sure that it works
+
+Here are some Keywords to try with this program:
+
+    1. create : this will generate new things for the user
+        A. file : this will create a file inside the selected folder
+
+        B. class : this will create a class inside a selected file
+
+        C. method : this will create a method inside the seleced folder
+
+    2. add : this will add things to your classes or methods
+        A. content : add variables to your method to make it work
+        
+Here is an example of how to create a file using this program:
+    * Try typing this into the text box: create file.
+    - A new window will show up wih three buttons, one for choosing the directory, 
+      one for entering the file name and one for creating the file.
+
+    - If you click on the first button that asks for a directory, 
+      you will be taken you a file explorer where you will be able to find and 
+      select a file where you would like top create documents.
+
+    - The next panel will ask you to enter a name for witch to name the file. 
+      You many also enter a file extension, but if you do not know what that is, 
+      the the program will create a file with a basic extension for you to use
+    
+    - Then once both of these fields have been filled, 
+      then click on the last putton in the window, and a new file will have been created.
+      Check in the file to make sure that the file has been created, otherwise click this button again.
+      
+Here are instructions on how to create a class using this program:
+    * Try typing in the first window: create file
+    - A second window will appear that will have three buttons, 
+      and you will be asked to select a file path, give the name of your class, 
+      and to actually write this information to the file
+
+    - If you click on the first button, you will be taken to a file explorer 
+      where you can select what file you want to create a class in. 
+      Important: you will only be able to write to approved file types such as 
+      text and java files, any others will not work.
+
+    - In the next area you will be able to type the name of what you want to set the class to. 
+      Only give the name, no other variables are needed
+    
+    - After both of these fields have been filled, click on the create class option, 
+      and your file should have your new class in it. We would recommended opening the 
+      file to check that the information was properly put in there.
+
+Here are instructions on how to create a method/function using this program:
+    * Try typing in the first window: create method
+    * Important: If you try to create a method without first making a class, 
+      the program will not write anything to your file. Go to previous instructions 
+      if you have not made a class first
+      
+    - In the new window that appears there will be four buttons tha will appear.
+      Click on the first button, and you will be brought to a file explorer where
+      you easily select what file you wish to write to. 
+      Important: Only supported file formats will work such as text and java files, 
+      any other will not work.
+    
+    - The next box will ask you to say what do you want your method to return.
+      If you are unaware of what this means, refer to later part of the document where we explain 
+      terminology. If you are unsure of what to put, we reccomend typing in void.
+    
+    - The next box we will ask what you want to name your class
+      What you name your method does not matter in programming, as it will work all the same, 
+      but we reccomend nameing it something that is simple and easy to remember and can be used later.
+      Also avoid putting in an special caracters such as () and */-+ or other things like that.
+
+    - Once all the fields have been filled out, click the last button to add your method to your file.
+      We reccomend opening up your file and making sure that the method was created correctly.
+
+Here are instructions on how to add content you your methods
+    * Try typing in the first window: add content
+    - A new window will appear with four buttons on it and 2 areas where you can type things.
+      Click on the first button to bring up a file explorer, 
+      in this you will be able to selecet the file you want to add to.
+      Important: Only supported file formats will work such as text and java files, any other will not work.
+    
+    - The next button will ask you to enter the name of your method.
+      If the file you have selected has a method inside of it, 
+      you must put in the name of the method you wish to add content to.
+      Ex: if the file you created has a method called "test", then in the typeable area type "test"
+      and the program will look for this method.
+    
+    - The next button will ask you to add content you would want to add to your method.
+      This part may be confusing to people who do not no anything about coding. 
+      We reccomend going to our terminology section of this help document and 
+      looking at some examples of what to put inside a method.
+
+    - Clicking the last button will add the contents that you have specified into the desired method
+      It is reccomended to open the file and check the contents to see if they were added proporly.
+      
+IMPORTANT TERMINOLOGY
+Directory: Your computer puts files and other things in what are called paths 
+           so that your computer can have better organization.
+           Every folder/file on your computer has a unique path,
+           which are know as Directories. If you created a folder
+           called test on desktop, the directory would be called:
+           C:\Users\<your_user_name>\Desktop\test. In other words,
+           directories are how your computer knows where stuff is.
+           
+Class: is an extensible program-code-template for creating objects, 
+          providing initial values for state (member variables) and implementations
+          of behavior (member functions or methods).
+          a basic class usually consists of three parts: its accessibility (private or public) the "class" keyword
+          to tell the program that its a class. And the name of the class.
+          Example of a class: public class example{} 
+          
+Method: is a procedure associated with a message and an object. 
+          This allows the sending objects to invoke behaviors and to delegate 
+          the implementation of those behaviors to the receiving object.
+          a basic method usually consists of three or four  parts:
+          its accessibility (private or public), its return type, the method's name. and sometimes 
+          parameters.
+          Note: in these examples "int" is the return type
+          Example of a method without parameters : private int get_number(){}
+          Example of a method with parameters : private int set_number(int i){}
+          
+Return Type: is the data type which the function will return when called/invoked
+          for example if the return type for my program is an int(integer), the output of
+          my function will return an integer. same goes with other types like Strings(Text), floats(decimal number)
+          and booleans(true or false values. usually represented by 1 for true and 0 for false).
+
+Content to add to a method: This part is for thoses who are less familier with coding with java 
+Examples of what to add to a method: also, if you wish to copy this into the program, we reccomend copying everything before the two //
+  System.out.println("Hello World"); // This will make your termainal say Hello World in it.
+  int i = 0; // This creats a variable (integer/number) called i, and you made it so i is set to 0.
+  (Variable) test = new (Variable)(); // This will what is know an initaializing a variable, which means that the program has reconized it and will be able to use it.
+    Examples of what to replace (Variable) with: String (text) , float (Large numbers), char (A single charater).
+  
+  These are simple examples of what you can put into your program. 
+  There are more complicated things you can add, but thoses are only reccomanded for people who have a better understanding oj java
+
+
+
+
+    
+    
