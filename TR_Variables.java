@@ -14,6 +14,9 @@ public class TR_Variables
     ////////////////////////////////////////////////////////////////////////
     //generic variables
     public ArrayList<String> Panel_Name_Storage = new ArrayList<String>(); //stores the names of the panels to be grabbed for later use
+    public String Paramater1 = new String();
+    public String Paramater2 = new String();
+
     ////////////////////////////////////////////////////////////////////////
     public JFrame Input_Window = new JFrame();
     ////////////////////////////////////////////////////////////////////////
@@ -24,6 +27,8 @@ public class TR_Variables
     
     public JButton File_Name_Button = new JButton("name button");
     public JTextArea File_Name_Text_Area = new JTextArea(1,20);
+    ////////////////////////////////////////////////////////////////////////
+    public JPanel File_Naming_test_EX = new JPanel();
     ////////////////////////////////////////////////////////////////////////
     //testing variables 
 }

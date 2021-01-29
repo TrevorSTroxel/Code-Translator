@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 public class Panel_Window_Methods implements ActionListener {
 	// This file will store where out panels settings are stored
 	TR_Variables TRV = new TR_Variables();
+	Create CR = new Create();
 	
 	/**
 	 * The only purpose of this method is to run all my Panel settings methods.
@@ -27,13 +28,16 @@ public class Panel_Window_Methods implements ActionListener {
 		TRV.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		TRV.Input_Window.setSize(500, 500);
 		
-		
 		//We will have to do a few different loops once we add more panels
 		//this is the only way to get different panels added to the frame
 		//look into switch statements later
 		if (JP == TRV.Folder_Panel.getName()) 
 		{
 			TRV.Input_Window.add(TRV.Folder_Panel); // find out why JP does not work //turns out you need to manually set the manels
+		}
+		else if (JP == "File naming")
+		{
+			TRV.Input_Window.add(TRV.File_Naming_test_EX);
 		}
 		
 		//these are at the end because these need to happen last
@@ -67,7 +71,6 @@ public class Panel_Window_Methods implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-		// TODO Possible have the inputs be moved to its own file so that we can have a dedicated file for it
 
 	}
 }
