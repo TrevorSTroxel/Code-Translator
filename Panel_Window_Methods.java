@@ -11,9 +11,23 @@ public class Panel_Window_Methods implements ActionListener {
 
 	public void Input_Window(JPanel JP) //work on gettign JP to work correctly
 	{
+		TRV.Input_Window.getContentPane().removeAll();//This is to make sure that the wondow is reuseable every time
+		TRV.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		TRV.Input_Window.setSize(500, 500);
+		TRV.Input_Window.add(JP); // find out why JP does not work
+		TRV.Input_Window.getContentPane().validate();
+		TRV.Input_Window.repaint();
+		TRV.Input_Window.setVisible(true);
+	}
+
+	public void test() //testing ideas
+	{
+		TRV.Input_Window.getContentPane().removeAll();//This is to make sure that the wondow is reuseable every time
 		TRV.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		TRV.Input_Window.setSize(500, 500);
 		TRV.Input_Window.add(TRV.Folder_Panel); // find out why JP does not work
+		TRV.Input_Window.getContentPane().validate();
+		TRV.Input_Window.repaint();
 		TRV.Input_Window.setVisible(true);
 	}
 
