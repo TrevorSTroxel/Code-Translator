@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import java.awt.GridLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +20,7 @@ public class Translator_Window extends JFrame implements ActionListener {
         TRV.Translator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         TRV.Translator.setSize(500,500);
         TRV.TR_Enter.addActionListener(this);
+        TRV.TR_Panel.setLayout(new GridLayout(2,1));
         TRV.TR_Panel.add(TRV.TR_Text_Area);
         TRV.TR_Panel.add(TRV.TR_Enter);
         TRV.Translator.add(TRV.TR_Panel);

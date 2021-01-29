@@ -7,9 +7,14 @@ public class String_To_Code {
 
     public void Translation(String INPUT2) 
     {
-        PWM.Method_Runner();
+        PWM.Method_Runner(); //look at file for desription
         if (INPUT2.contains("new file")) 
         {
+            /**
+             * we need to make these functions wait and do one thing at a time, 
+             * it first needs to make a new file and then it looks to see if 
+             * what else the user has said
+            */
             PWM.Input_Window(TRV.Folder_Panel);
             if (INPUT2.contains("say")) {
                 // say();
