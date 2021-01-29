@@ -8,6 +8,7 @@ public class String_To_Code {
     public void Translation(String INPUT2) 
     {
         PWM.Method_Runner(); //look at file for desription
+        PWM.Panel_Name_Setter();
         if (INPUT2.contains("new file")) 
         {
             /**
