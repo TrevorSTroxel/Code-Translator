@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -12,6 +14,7 @@ public class TR_Variables
     public JButton TR_Enter = new JButton("Enter");
     ////////////////////////////////////////////////////////////////////////
     //generic variables
+    public ArrayList<String> Panel_Name_Storage = new ArrayList<String>(); //stores the names of the panels to be grabbed for later use
     ////////////////////////////////////////////////////////////////////////
     public JFrame Input_Window = new JFrame();
     ////////////////////////////////////////////////////////////////////////
@@ -24,5 +27,4 @@ public class TR_Variables
     public JTextArea File_Name_Text_Area = new JTextArea(1,20);
     ////////////////////////////////////////////////////////////////////////
     //testing variables 
-
 }
