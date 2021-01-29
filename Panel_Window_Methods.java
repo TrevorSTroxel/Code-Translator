@@ -31,7 +31,7 @@ public class Panel_Window_Methods implements ActionListener {
 		//We will have to do a few different loops once we add more panels
 		//this is the only way to get different panels added to the frame
 		//look into switch statements later
-		if (TRV.Panel_Name_Storage.contains(JP)) 
+		if (JP == TRV.Folder_Panel.getName()) 
 		{
 			TRV.Input_Window.add(TRV.Folder_Panel); // find out why JP does not work //turns out you need to manually set the manels
 		}
@@ -61,7 +61,7 @@ public class Panel_Window_Methods implements ActionListener {
 	public void Panel_Name_Setter()
 	{
 		TRV.Folder_Panel.setName("Folder Panel");
-		TRV.Panel_Name_Storage.add(TRV.Folder_Panel.getName());
+		//TRV.Panel_Name_Storage.add(TRV.Folder_Panel.getName());
 	}
 
 	@Override

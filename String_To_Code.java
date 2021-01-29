@@ -30,18 +30,4 @@ public class String_To_Code {
             }
         }
     }
-
-    // public static String say()
-    // {
-    // int index = input.indexOf("say");
-    // String string_contents = new String();
-    // for (int i = index + 1; i < input.length(); i++)
-    // {
-    // if(!Spliting_Words[i].equals("new"))
-    // {
-    // string_contents += Spliting_Words[i] + " ";
-    // }
-    // }
-    // return string_contents;
-    // }
 }

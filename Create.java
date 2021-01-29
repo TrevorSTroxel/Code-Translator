@@ -7,8 +7,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
  * These are all the online sources that we used to help create this program in
  * thos file: reference: https://www.w3schools.com/java/java_files_create.asp
