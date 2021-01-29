@@ -15,8 +15,9 @@ public class String_To_Code {
              * it first needs to make a new file and then it looks to see if 
              * what else the user has said
             */
-            PWM.Input_Window(TRV.Folder_Panel.getName());
-            if (INPUT2.contains("say")) {
+            PWM.Input_Window(TRV.Folder_Panel.getUIClassID()); //look into something that can be grabed from the this JPanel that is unique
+            if (INPUT2.contains("say")) 
+            {
                 // say();
             }
         }
