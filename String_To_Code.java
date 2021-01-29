@@ -15,7 +15,7 @@ public class String_To_Code {
              * it first needs to make a new file and then it looks to see if 
              * what else the user has said
             */
-            PWM.Input_Window(TRV.Folder_Panel);
+            PWM.Input_Window(TRV.Folder_Panel.getName());
             if (INPUT2.contains("say")) {
                 // say();
             }

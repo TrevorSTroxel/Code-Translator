@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import java.awt.GridLayout;
 
 import java.awt.event.ActionEvent;
@@ -21,23 +20,25 @@ public class Panel_Window_Methods implements ActionListener {
 
 
 	//JP is considerend its own, seperate JPanel and not the input the method call
-	public void Input_Window(JPanel JP) //we have to grab the name of the panel input to set it correctly
+	public void Input_Window(String JP) //we have to grab the name of the panel input to set it correctly
 	{
 		TRV.Input_Window.getContentPane().removeAll();//This is to make sure that the wondow is reuseable every time
 		TRV.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		TRV.Input_Window.setSize(500, 500);
 		
+		
 		//We will have to do a few different loops once we add more panels
 		//this is the only way to get different panels added to the frame
-		if (JP.getName() == TRV.Folder_Panel.getName()) 
+		//look into switch statements later
+		if (JP == TRV.Folder_Panel.getName()) 
 		{
 			TRV.Input_Window.add(TRV.Folder_Panel); // find out why JP does not work //turns out you need to manually set the manels
 		}
 		
+		//these are at the end because these need to happen last
 		TRV.Input_Window.getContentPane().validate();
 		TRV.Input_Window.repaint();
 		TRV.Input_Window.setVisible(true);
-
 	}
 
 	public void File_Creation_Panel() 
