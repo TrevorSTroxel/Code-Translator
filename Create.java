@@ -24,8 +24,6 @@ import java.util.List;
 
 public class Create{
 	TR_Variables TRV = new TR_Variables();
-	Panel_Window_Methods PWM = new Panel_Window_Methods();
-
 	/**
 	 * This method when called will grab the file path the user has chosen and
 	 * create a file inside the desired location. If the user does not geve the file

@@ -11,6 +11,7 @@ public class TR_Variables
     public JPanel TR_Panel = new JPanel();
     public JTextArea TR_Text_Area = new JTextArea(1,20);
     public JButton TR_Enter = new JButton("Enter");
+    public JButton test = new JButton("test");
     ////////////////////////////////////////////////////////////////////////
     //generic variables
     public ArrayList<String> Panel_Name_Storage = new ArrayList<String>(); //stores the names of the panels to be grabbed for later use

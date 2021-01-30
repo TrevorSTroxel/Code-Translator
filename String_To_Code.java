@@ -1,7 +1,4 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-public class String_To_Code implements ActionListener {
+public class String_To_Code {
     TR_Variables TRV = new TR_Variables();
     Panel_Window_Methods PWM = new Panel_Window_Methods();
     Create CR = new Create();
@@ -9,7 +6,6 @@ public class String_To_Code implements ActionListener {
 
     public void Translation(String INPUT2) {
         PWM.Method_Runner(); // look at file for desription
-        PWM.Panel_Name_Setter();
         if (INPUT2.contains("new file")) {
             /**
              * we need to make these functions wait and do one thing at a time, it first
@@ -32,10 +28,5 @@ public class String_To_Code implements ActionListener {
                 // say();
             }
         }
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 }

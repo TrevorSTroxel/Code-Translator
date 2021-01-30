@@ -18,6 +18,7 @@ public class Panel_Window_Methods implements ActionListener {
 	{
 		//will add more methods to run later, for now its only one
 		File_Creation_Panel();
+		Panel_Name_Setter();
 	}
 
 
@@ -49,14 +50,15 @@ public class Panel_Window_Methods implements ActionListener {
 	public void File_Creation_Panel() 
 	{
 		TRV.Folder_Panel.setLayout(new GridLayout(2,2));
+		
+		TRV.File_Name_Button.addActionListener(this);
+		TRV.Folder_Path_Button.addActionListener(this);
+		
 		TRV.Folder_Panel.add(TRV.Folder_Path_Button);
 		TRV.Folder_Panel.add(TRV.Folder_Path_Text_Area);
 
 		TRV.Folder_Panel.add(TRV.File_Name_Button);
 		TRV.Folder_Panel.add(TRV.File_Name_Text_Area);
-
-		TRV.File_Name_Button.addActionListener(this);
-		TRV.Folder_Path_Button.addActionListener(this);
 
 		TRV.Folder_Panel.setEnabled(true);
 	}
@@ -65,12 +67,19 @@ public class Panel_Window_Methods implements ActionListener {
 	public void Panel_Name_Setter()
 	{
 		TRV.Folder_Panel.setName("Folder Panel");
-		//TRV.Panel_Name_Storage.add(TRV.Folder_Panel.getName());
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
-
+        if(e.getSource() == TRV.Folder_Path_Button)
+        {
+            TRV.Paramater1 = TRV.Folder_Path_Text_Area.getText();
+        }
+        else if(e.getSource() == TRV.File_Name_Button)
+        {
+            TRV.Paramater2 = TRV.File_Name_Text_Area.getText();
+            CR.create_file(TRV.Paramater1, TRV.Paramater2);
+        }
 	}
 }
