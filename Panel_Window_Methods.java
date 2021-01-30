@@ -50,7 +50,7 @@ public class Panel_Window_Methods implements ActionListener {
 	public void File_Creation_Panel() 
 	{
 		TRV.Folder_Panel.setLayout(new GridLayout(2,2));
-		
+
 		TRV.File_Name_Button.addActionListener(this);
 		TRV.Folder_Path_Button.addActionListener(this);
 		
@@ -59,8 +59,6 @@ public class Panel_Window_Methods implements ActionListener {
 
 		TRV.Folder_Panel.add(TRV.File_Name_Button);
 		TRV.Folder_Panel.add(TRV.File_Name_Text_Area);
-
-		TRV.Folder_Panel.setEnabled(true);
 	}
 
 	//This function will set names for panels and store the names in an array to be used later

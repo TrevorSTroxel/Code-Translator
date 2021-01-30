@@ -36,14 +36,14 @@ public class Translator_Window extends JFrame implements ActionListener {
         input.toLowerCase(); //for easier coding
         if(e.getSource() == TRV.TR_Enter)
         {
-
             STC.Translation(input);
         }
         else if(e.getSource() == TRV.test)
         {
             System.out.println("testing");
         }
-        else{
+        else
+        {
             PWM.actionPerformed(e);
         }
     }
