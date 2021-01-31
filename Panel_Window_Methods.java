@@ -41,9 +41,9 @@ public class Panel_Window_Methods implements ActionListener {
 		}
 
 		// these are at the end because these need to happen last
+		TRV.Input_Window.setVisible(true);
 		TRV.Input_Window.getContentPane().validate();
 		TRV.Input_Window.repaint();
-		TRV.Input_Window.setVisible(true);
 	}
 
 	public void File_Creation_Panel() {

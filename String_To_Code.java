@@ -43,22 +43,23 @@ public class String_To_Code
             // break;
             //THIS ALMOST WORKS. WE JUST HAVE TO GET THE MENU FULLY LOADED AND THEN I THINK WE WILL BE ON THE RIGHT TRACK
             //wait();
+            break;
         }
-        // testing out a theory i had, normally commented out
-        while (INPUT2.contains("say") && TRV.a == 2) 
-        {
+        // // testing out a theory i had, normally commented out
+        // while (INPUT2.contains("say") && TRV.a == 2) 
+        // {
 
-            System.out.println("help");
-            PWM.Input_Window("File naming");
-        }
+        //     System.out.println("help");
+        //     PWM.Input_Window("File naming");
+        // }
 
-        while (INPUT2.contains("add to file")) 
-        {
-            if (INPUT2.contains("say")) 
-            {
-                // say();
-            }
-        }
+        // while (INPUT2.contains("add to file")) 
+        // {
+        //     if (INPUT2.contains("say")) 
+        //     {
+        //         // say();
+        //     }
+        // }
     } //so the menu only works after the method is finished. look into ways to work around this
 
 }
