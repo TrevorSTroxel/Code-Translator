@@ -10,17 +10,19 @@ public class Translator_Window extends JFrame implements ActionListener {
     String_To_Code STC = new String_To_Code();
     Panel_Window_Methods PWM = new Panel_Window_Methods();
     Create CR = new Create();
+    
 
     /**
-     * This method will be better set up later. Right now we just needed a mock
-     * window to test out our code
+     * This method will be better set up later. 
+     * Right now we just needed a mock window to test out our code
      */
-    public void New_Window() {
+    public void New_Window()
+    {
         TRV.Translator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        TRV.Translator.setSize(500, 500);
+        TRV.Translator.setSize(500,500);
         TRV.TR_Enter.addActionListener(this);
         TRV.test.addActionListener(this);
-        TRV.TR_Panel.setLayout(new GridLayout(3, 1));
+        TRV.TR_Panel.setLayout(new GridLayout(3,1));
         TRV.TR_Panel.add(TRV.TR_Text_Area);
         TRV.TR_Panel.add(TRV.TR_Enter);
         TRV.TR_Panel.add(TRV.test);
@@ -31,14 +33,11 @@ public class Translator_Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String input = TRV.TR_Text_Area.getText();
-        input.toLowerCase(); // for easier coding
-        if (e.getSource() == TRV.TR_Enter) {
-            //for some reason the program wants this since I am trying wait() and notify, may have to change back later
-            try {
-                STC.Translation(input);
-            } catch (InterruptedException e1) {
-                e1.printStackTrace();
-            }
+        input.toLowerCase(); //for easier coding
+        PWM.Method_Runner(); // look at file for desription
+        if(e.getSource() == TRV.TR_Enter)
+        {
+            STC.Translation(input);
         }
         else if(e.getSource() == TRV.test)
         {

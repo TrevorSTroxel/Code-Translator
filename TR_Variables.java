@@ -32,4 +32,7 @@ public class TR_Variables
     public JPanel File_Naming_test_EX = new JPanel();
     ////////////////////////////////////////////////////////////////////////
     //testing variables 
+    int i = 0; // variable stays here for simplicity sake,
+    int a = 0; // for testing loops arguments, and it works so far, but need to make the
+               // program waits first before this can be fully implimented
 }

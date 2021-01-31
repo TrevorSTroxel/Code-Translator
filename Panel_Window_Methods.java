@@ -8,6 +8,7 @@ public class Panel_Window_Methods implements ActionListener {
 	// This file will store where out panels settings are stored
 	TR_Variables TRV = new TR_Variables();
 	Create CR = new Create();
+	String_To_Code STC = new String_To_Code();
 	
 	/**
 	 * The only purpose of this method is to run all my Panel settings methods.
@@ -79,7 +80,7 @@ public class Panel_Window_Methods implements ActionListener {
         {
             TRV.Paramater2 = TRV.File_Name_Text_Area.getText();
 			CR.create_file(TRV.Paramater1, TRV.Paramater2);
-			notify();
+            STC.Translation(TRV.TR_Text_Area.getText());
         }
 	}
 }
