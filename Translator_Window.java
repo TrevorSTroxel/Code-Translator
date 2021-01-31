@@ -27,13 +27,15 @@ public class Translator_Window extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) 
+    {
         String input = TRV.TR_Text_Area.getText();
         input.toLowerCase(); // for easier coding
-        PWM.Method_Runner(); // look at file for desription
-        if (e.getSource() == TRV.TR_Enter) {
+        if (e.getSource() == TRV.TR_Enter) 
+        {
             STC.Translation(input);
-        } else {
+        } else 
+        {
             PWM.actionPerformed(e);
         }
     }
