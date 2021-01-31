@@ -1,0 +1,5 @@
+what we need to do now is:
+    have the program load up the menu for the user to get input, then make the program wait
+    after the program waits, have the action listeners set in a way so that once a button is pressed, 
+        the system does a notify() so that it can ocntinue the process
+    have this be done for buttons that call creation methods

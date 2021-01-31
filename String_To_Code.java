@@ -1,4 +1,5 @@
-public class String_To_Code {
+public class String_To_Code 
+{
     TR_Variables TRV = new TR_Variables();
     Panel_Window_Methods PWM = new Panel_Window_Methods();
     Create CR = new Create();
@@ -10,20 +11,23 @@ public class String_To_Code {
     // Another idea when working on this would be a break and contine command
     // this would be another thing to look into if the threading does not work
 
-    //maybe we need to put this whole thing ionto a do while loop or something idk
+    // maybe we need to put this whole thing ionto a do while loop or something idk
 
-    //the only other idea that I can currently think of is that each method would get its own window, but that seems highly inefficient
-    
-    //instead of ifs and else ifs, maybe have them be while loops? look more into this as i think this and threads are what we may possible need
-    public synchronized void Translation(String INPUT2) 
+    // the only other idea that I can currently think of is that each method would
+    // get its own window, but that seems highly inefficient
+
+    // instead of ifs and else ifs, maybe have them be while loops? look more into
+    // this as i think this and threads are what we may possible need
+    public synchronized void Translation(String INPUT2) throws InterruptedException 
     {
         PWM.Method_Runner(); // look at file for desription
         // work on makeing the program wait until it first completes creating a new
         // file, then make it do all other commands
         // Most important thing though IS MAKING THE PROGRAM WAIT, ELSE IT WILL RUN
         // THROUGH ALL OTHER COMMANDS AND NOT WORK CORRETLY
-        while (INPUT2.contains("new file") && TRV.a == 0) // right now the program looks into this only and then ends the
-                                                       // program, so adding an extra paramater is needed
+        while (INPUT2.contains("new file") && TRV.a == 0) // right now the program looks into this only and then ends
+                                                          // the
+                                                          // program, so adding an extra paramater is needed
         {
             /**
              * we need to make these functions wait and do one thing at a time, it first
@@ -37,10 +41,13 @@ public class String_To_Code {
             // start again to run to the next statement it detects
             // working to see if this will work or not
             // break;
+            //THIS ALMOST WORKS. WE JUST HAVE TO GET THE MENU FULLY LOADED AND THEN I THINK WE WILL BE ON THE RIGHT TRACK
+            //wait();
         }
         // testing out a theory i had, normally commented out
-        while (INPUT2.contains("say")) 
+        while (INPUT2.contains("say") && TRV.a == 2) 
         {
+
             System.out.println("help");
             PWM.Input_Window("File naming");
         }
@@ -52,5 +59,6 @@ public class String_To_Code {
                 // say();
             }
         }
-    }
+    } //so the menu only works after the method is finished. look into ways to work around this
+
 }

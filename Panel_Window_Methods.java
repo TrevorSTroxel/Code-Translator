@@ -78,6 +78,8 @@ public class Panel_Window_Methods implements ActionListener {
 			//have the translator method continue once the button is hit so it can run through the next part of the sentence the user put in
 			// STC.Translation(TRV.TR_Text_Area.getText()); //can't run without the object,
 			// and the object breaks the program
+			TRV.a = 2;
+			notify();
 		}
 	}
 }
