@@ -67,6 +67,7 @@ public class Panel_Window_Methods implements ActionListener {
 		TRV.Folder_Panel.setName("Folder Panel");
 	}
 
+	//PPOSSIBLE LOOK INTO MAKING THE PROGRAM WAIT UNTIL A BUTTON IS PRESSED, THEN AFTER A BUTTON IS PRESSED IT GOES TO THE NEXT COMMAND THAT THE USER HAS INPUTED
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
@@ -77,7 +78,8 @@ public class Panel_Window_Methods implements ActionListener {
         else if(e.getSource() == TRV.File_Name_Button)
         {
             TRV.Paramater2 = TRV.File_Name_Text_Area.getText();
-            CR.create_file(TRV.Paramater1, TRV.Paramater2);
+			CR.create_file(TRV.Paramater1, TRV.Paramater2);
+			notify();
         }
 	}
 }
