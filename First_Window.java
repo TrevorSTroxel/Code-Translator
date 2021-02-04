@@ -37,9 +37,11 @@ public class First_Window extends JFrame implements ActionListener
      */
     public void ActionSetter()
     {
+        //////////////////////////////////////////////////////
         //create file button action listeners, "new file"
         Variables.File_Name_Button.addActionListener(this);
         Variables.Folder_Path_Button.addActionListener(this);
+        //////////////////////////////////////////////////////
     }
 
     @Override
