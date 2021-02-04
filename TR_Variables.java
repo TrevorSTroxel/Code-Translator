@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +22,8 @@ public class TR_Variables {
     public String Paramater1 = new String();
     public String Paramater2 = new String();
     public static JLabel l = new JLabel();
+    public static Queue<String> Order_Of_Commands = new LinkedList<>(); //look more into why static makes things work for our program
+    public static String INPUT2 = new String();
 
     ////////////////////////////////////////////////////////////////////////
     public JFrame Input_Window = new JFrame();

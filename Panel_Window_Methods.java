@@ -8,13 +8,11 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import java.util.LinkedList; 
-import java.util.Queue; 
-
 public class Panel_Window_Methods implements ActionListener {
 	// This file will store where out panels settings are stored
 	TR_Variables TRV = new TR_Variables();
 	Create CR = new Create();
+	String_To_Code STC = new String_To_Code();
 	//String_To_Code STC = new String_To_Code(); // this breaks the code for some
 	// reason
 
@@ -85,6 +83,18 @@ public class Panel_Window_Methods implements ActionListener {
         JTF.setText(TR_Variables.l.getText());
     }
 
+	//we are attempting to do queues in our code
+	public void Input_Parsing(String INPUT2){
+		if (INPUT2.contains("new file"))
+		{
+			TR_Variables.Order_Of_Commands.add("new file");
+		}
+		else if (INPUT2.contains("say"))
+		{
+			TR_Variables.Order_Of_Commands.add("say");
+		}
+	}
+	
 	// PPOSSIBLE LOOK INTO MAKING THE PROGRAM WAIT UNTIL A BUTTON IS PRESSED, THEN
 	// AFTER A BUTTON IS PRESSED IT GOES TO THE NEXT COMMAND THAT THE USER HAS
 	// INPUTED
@@ -96,14 +106,10 @@ public class Panel_Window_Methods implements ActionListener {
 		} else if (e.getSource() == TRV.File_Name_Button) {
 			TRV.Paramater2 = TRV.File_Name_Text_Area.getText();
 			CR.create_file(TRV.Paramater1, TRV.Paramater2);
-			//have the translator method continue once the button is hit so it can run through the next part of the sentence the user put in
-			// STC.Translation(TRV.TR_Text_Area.getText()); //can't run without the object,
-			// and the object breaks the program
-			TRV.a = 2;
+			TR_Variables.Order_Of_Commands.remove();
+			STC.Translation(TR_Variables.INPUT2);
 		}
 	}
 
-	public void Input_Parsing(){
 
-	}
 }

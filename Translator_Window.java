@@ -35,14 +35,11 @@ public class Translator_Window extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String input = TRV.TR_Text_Area.getText();
-        input.toLowerCase(); // for easier coding
+        TR_Variables.INPUT2 = TRV.TR_Text_Area.getText();
+        TR_Variables.INPUT2.toLowerCase(); // for easier coding
+        PWM.Input_Parsing(TR_Variables.INPUT2);
         if (e.getSource() == TRV.TR_Enter) {
-            try {
-                STC.Translation(input);
-            } catch (InterruptedException e1) {
-                e1.printStackTrace();
-            }
+            STC.Translation(TR_Variables.INPUT2);
         } else {
             PWM.actionPerformed(e);
         }
