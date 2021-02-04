@@ -10,11 +10,8 @@ import java.awt.event.ActionListener;
 
 public class Methods implements ActionListener {
 	// Method storage
-	    //had to move this to test something
-    //THIS IS CURSED
     public static void Translation(String INPUT2)
     {
-		Panel_Name_Setter();
         if (Variables.Order_Of_Commands.peek().equals("new file"))
         {
             File_Creation_Panel(); // look at file for desription
@@ -48,7 +45,8 @@ public class Methods implements ActionListener {
 		Variables.Input_Window.repaint();
 	}
 
-	public static void File_Creation_Panel() {
+	public static void File_Creation_Panel() 
+	{
 		Variables.Folder_Panel.setLayout(new GridLayout(2, 2));
 
 		Variables.Folder_Panel.add(Variables.Folder_Path_Button);
@@ -65,9 +63,10 @@ public class Methods implements ActionListener {
 		Variables.Folder_Panel.setName("Folder Panel");
 	}
 
-	public static void FileSelect(JTextArea JTF) {
+	public static void FileSelect(JTextArea JTF) 
+	{
         JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-        j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         int r = j.showOpenDialog(null);
         if (r == JFileChooser.APPROVE_OPTION) 
 		{
@@ -105,6 +104,5 @@ public class Methods implements ActionListener {
 			Variables.Order_Of_Commands.poll();
 			Translation(Variables.INPUT2);
 		}
-
 	}
 }

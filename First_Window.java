@@ -23,8 +23,11 @@ public class First_Window extends JFrame implements ActionListener {
         Variables.Translator.setVisible(true);
     }
 
+    //we had to move this here because we can't use "this" in a static context, 
+    //so we decided to make a method here for it
     public void ActionSetter()
     {
+        //create file button action listeners
         Variables.File_Name_Button.addActionListener(this);
         Variables.Folder_Path_Button.addActionListener(this);
     }
@@ -33,9 +36,10 @@ public class First_Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Variables.INPUT2 = Variables.TR_Text_Area.getText();
         Variables.INPUT2.toLowerCase(); // for easier coding
-        ActionSetter();
         if (e.getSource() == Variables.TR_Enter) 
         {
+            ActionSetter();
+            Methods.Panel_Name_Setter(); //this is used to set names of panels so for later arguments
             Methods.Input_Parsing(Variables.INPUT2);
             Methods.Translation(Variables.INPUT2);
         }
