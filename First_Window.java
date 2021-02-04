@@ -33,10 +33,10 @@ public class First_Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Variables.INPUT2 = Variables.TR_Text_Area.getText();
         Variables.INPUT2.toLowerCase(); // for easier coding
-        Methods.Input_Parsing(Variables.INPUT2);
         ActionSetter();
         if (e.getSource() == Variables.TR_Enter) 
         {
+            Methods.Input_Parsing(Variables.INPUT2);
             Methods.Translation(Variables.INPUT2);
         }
         else 

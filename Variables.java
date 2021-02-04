@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,8 +16,6 @@ public class Variables {
     public static JButton test = new JButton("test");
     ////////////////////////////////////////////////////////////////////////
     // generic variables
-    public static ArrayList<String> Panel_Name_Storage = new ArrayList<String>(); // stores the names of the panels to be
-                                                                           // grabbed for later use
     public static String Paramater1 = new String();
     public static String Paramater2 = new String();
     public static JLabel l = new JLabel();

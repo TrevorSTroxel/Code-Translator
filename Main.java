@@ -5,8 +5,7 @@
 public class Main {
 
     /**
-     * All this is for is to run the program. It calls methods from the
-     * PrimaryWindow file and that is what starts the program
+     * Starts the program
      * 
      * @param args
      */
