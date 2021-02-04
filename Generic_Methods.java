@@ -17,11 +17,11 @@ public class Generic_Methods implements ActionListener
         if (Variables.Order_Of_Commands.peek().equals("new file"))
         {
             Panel_Methods.File_Creation_Panel(); //used to run the file creation panel settings
-            Panel_Methods.Input_Window("Folder Panel");
+            Panel_Methods.Input_Window("Folder Panel"); //sets the second window panel to the correct one
         }
         else if (Variables.Order_Of_Commands.peek().equals("say"))
         {
-			Panel_Methods.Input_Window("File naming");
+			Panel_Methods.Input_Window("File naming"); //dummy panel right now. will set up actual panel later
         }
     }
 
@@ -55,9 +55,14 @@ public class Generic_Methods implements ActionListener
 		}
     }
 
-	//This will put certain things in the queue in order so that
-	//no matter where the user types the commands, the program will put them in the correct order
-	//and then run the commands in the proer order they must go in
+
+	/**
+	 * This will put certain things in the queue in order so that
+	 * no matter where the user types the commands, the program will put them in the correct order
+	 * and then run the commands in the proer order they must go in.
+	 * More commands will be add later that can be interperted and added to the queue
+	 * @param User_Input
+	 */
 	public static void Input_Parsing(String User_Input)
 	{
 		if (User_Input.contains("new file"))
@@ -70,11 +75,15 @@ public class Generic_Methods implements ActionListener
 		}
 	}
 
-	//this is for cleaner code. Allows us to deal with other button presses.
-	//might want to move this to its own file if we get enough commands
-	//for right now it is fine here
+
+	/**
+	 * this is for cleaner code. Allows us to deal with other button presses.
+	 * might want to move this to its own file if we get enough commands
+	 * for right now it is fine here
+	 */
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) 
+	{
         if (e.getSource() == Variables.Folder_Path_Button) 
 		{
 			Generic_Methods.Location(Variables.Folder_Path_Text_Area, 1); //grabs the text in the folder path area

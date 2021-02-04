@@ -7,14 +7,17 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class First_Window extends JFrame implements ActionListener {
-    Generic_Methods M = new Generic_Methods();
-    private static final long serialVersionUID = 1L;
+public class First_Window extends JFrame implements ActionListener 
+{
+    Generic_Methods M = new Generic_Methods(); //only time we will create an object, as we need it to move the action inputs
+    private static final long serialVersionUID = 1L; //makes VSCode
+    
     /**
-     * This method will be better set up later. Right now we just needed a mock
-     * window to test out our code
+     * Used to set up the first window the user sees
+     * May change or work on later to lok better, have a better layout than current one
      */
-    public void New_Window() {
+    public void New_Window() 
+    {
         Variables.Translator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Variables.Translator.setSize(500, 500);
         Variables.TR_Enter.addActionListener(this);
@@ -25,8 +28,13 @@ public class First_Window extends JFrame implements ActionListener {
         Variables.Translator.setVisible(true);
     }
 
-    //we had to move this here because we can't use "this" in a static context, 
-    //so we decided to make a method here for it
+
+    /**
+     * we can not use "this" in static context, so we decided
+     * to make a method that sets all the button action listeners
+     * up right here. this may change later if we can find a better way but for 
+     * right now this will suit our needs
+     */
     public void ActionSetter()
     {
         //create file button action listeners, "new file"
@@ -35,7 +43,8 @@ public class First_Window extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) 
+    {
         Variables.User_Input = Variables.TR_Text_Area.getText();
         Variables.User_Input.toLowerCase(); // for easier coding
         if (e.getSource() == Variables.TR_Enter) 
