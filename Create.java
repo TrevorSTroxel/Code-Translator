@@ -23,7 +23,6 @@ import java.util.List;
  */
 
 public class Create{
-	TR_Variables TRV = new TR_Variables();
 	/**
 	 * This method when called will grab the file path the user has chosen and
 	 * create a file inside the desired location. If the user does not geve the file
@@ -39,7 +38,7 @@ public class Create{
 	 * @param file_directory
 	 * @param file_name
 	 */
-	public void create_file(String file_directory, String file_name) 
+	public static void create_file(String file_directory, String file_name) 
 	{
 		try {
 			File new_file = new File(file_directory + "\\" + file_name);
