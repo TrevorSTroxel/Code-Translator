@@ -1,8 +1,15 @@
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.filechooser.FileSystemView;
+
 import java.awt.GridLayout;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import java.util.LinkedList; 
+import java.util.Queue; 
 
 public class Panel_Window_Methods implements ActionListener {
 	// This file will store where out panels settings are stored
@@ -55,6 +62,7 @@ public class Panel_Window_Methods implements ActionListener {
 		TRV.Folder_Panel.add(TRV.Folder_Path_Button);
 		TRV.Folder_Panel.add(TRV.Folder_Path_Text_Area);
 
+
 		TRV.Folder_Panel.add(TRV.File_Name_Button);
 		TRV.Folder_Panel.add(TRV.File_Name_Text_Area);
 	}
@@ -65,12 +73,25 @@ public class Panel_Window_Methods implements ActionListener {
 		TRV.Folder_Panel.setName("Folder Panel");
 	}
 
+	public static void FileSelect(JTextArea JTF) {
+        JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+        j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+        int r = j.showOpenDialog(null);
+        if (r == JFileChooser.APPROVE_OPTION) 
+		{
+            // set the label to the path of the selected directory
+            TR_Variables.l.setText(j.getSelectedFile().getAbsolutePath());
+        }
+        JTF.setText(TR_Variables.l.getText());
+    }
+
 	// PPOSSIBLE LOOK INTO MAKING THE PROGRAM WAIT UNTIL A BUTTON IS PRESSED, THEN
 	// AFTER A BUTTON IS PRESSED IT GOES TO THE NEXT COMMAND THAT THE USER HAS
 	// INPUTED
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == TRV.Folder_Path_Button) {
+			FileSelect(TRV.Folder_Path_Text_Area);
 			TRV.Paramater1 = TRV.Folder_Path_Text_Area.getText();
 		} else if (e.getSource() == TRV.File_Name_Button) {
 			TRV.Paramater2 = TRV.File_Name_Text_Area.getText();
@@ -79,7 +100,10 @@ public class Panel_Window_Methods implements ActionListener {
 			// STC.Translation(TRV.TR_Text_Area.getText()); //can't run without the object,
 			// and the object breaks the program
 			TRV.a = 2;
-			notify();
 		}
+	}
+
+	public void Input_Parsing(){
+
 	}
 }

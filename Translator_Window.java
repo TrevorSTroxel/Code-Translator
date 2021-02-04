@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+
 import java.awt.GridLayout;
 
 import java.awt.event.ActionEvent;
@@ -20,6 +21,12 @@ public class Translator_Window extends JFrame implements ActionListener {
         TRV.Translator.setSize(500, 500);
         TRV.TR_Enter.addActionListener(this);
         TRV.TR_Panel.setLayout(new GridLayout(2, 1));
+        // come back to later
+        // try {
+        // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        // } catch (Exception e) {
+        // e.printStackTrace();
+        // }
         TRV.TR_Panel.add(TRV.TR_Text_Area);
         TRV.TR_Panel.add(TRV.TR_Enter);
         TRV.Translator.add(TRV.TR_Panel);
@@ -36,9 +43,7 @@ public class Translator_Window extends JFrame implements ActionListener {
             } catch (InterruptedException e1) {
                 e1.printStackTrace();
             }
-        } 
-        else 
-        {
+        } else {
             PWM.actionPerformed(e);
         }
     }

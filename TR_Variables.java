@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -17,6 +18,7 @@ public class TR_Variables {
                                                                            // grabbed for later use
     public String Paramater1 = new String();
     public String Paramater2 = new String();
+    public static JLabel l = new JLabel();
 
     ////////////////////////////////////////////////////////////////////////
     public JFrame Input_Window = new JFrame();
