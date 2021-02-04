@@ -22,7 +22,8 @@ import java.util.List;
  * @version 1.0
  */
 
-public class Create{
+public class Create
+{
 	/**
 	 * This method when called will grab the file path the user has chosen and
 	 * create a file inside the desired location. If the user does not geve the file
@@ -40,14 +41,19 @@ public class Create{
 	 */
 	public static void create_file(String file_directory, String file_name) 
 	{
-		try {
+		try 
+		{
 			File new_file = new File(file_directory + "\\" + file_name);
 			new_file.getParentFile().mkdirs();
 			new_file.createNewFile();
-		} catch (FileAlreadyExistsException e) { // this is to prevet the program from making a file that already exists
-		} catch (IOException e) { // this is meant to make sure that the commands are being interperted correctly
-			System.out
-					.println("There was an error when creating your new file, try making sure you have correct inputs");
+		} 
+		catch (FileAlreadyExistsException e) 
+		{ 
+			// this is to prevet the program from making a file that already exists
+		} 
+		catch (IOException e) // this is meant to make sure that the commands are being interperted correctly
+		{ 
+			System.out.println("There was an error when creating your new file, try making sure you have correct inputs");
 			e.printStackTrace();
 		}
 	}
@@ -64,13 +70,16 @@ public class Create{
 	 * @param file_path
 	 * @param class_name
 	 */
-	public void creatr_class(String file_path, String class_name) {
-		try {
-			List<String> fileContents = new ArrayList<>(
-					Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
+	public void creatr_class(String file_path, String class_name) 
+	{
+		try 
+		{
+			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
 			fileContents.add("public class " + class_name + "{\n public  void main(String[] args) {\n\n} \n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
@@ -86,15 +95,20 @@ public class Create{
 	 * @param return_type
 	 * @param method_name
 	 */
-	public void create_method(String File_Directory, String return_type, String method_name) {
-		try {
-			List<String> fileContents = new ArrayList<>(
-					Files.readAllLines(Paths.get(File_Directory), StandardCharsets.UTF_8));
-			for (int i = 0; i < fileContents.size(); i++) {
+	public void create_method(String File_Directory, String return_type, String method_name) 
+	{
+		try 
+		{
+			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(File_Directory), StandardCharsets.UTF_8));
+			for (int i = 0; i < fileContents.size(); i++) 
+			{
 				String testing = fileContents.get(i);
-				if (testing.contains("class")) {
-					for (int j = i; j < fileContents.size(); j++) {
-						if (fileContents.get(j).equals("")) {
+				if (testing.contains("class")) 
+				{
+					for (int j = i; j < fileContents.size(); j++) 
+					{
+						if (fileContents.get(j).equals("")) 
+						{
 							fileContents.set(j, "public " + return_type + " " + method_name + "(){\n\n}");
 						}
 					}
@@ -102,7 +116,9 @@ public class Create{
 			}
 			Files.write(Paths.get(File_Directory), fileContents, StandardCharsets.UTF_8);
 			System.out.println("Successfully wrote to the file.");
-		} catch (IOException e) {
+		} 
+		catch (IOException e) 
+		{
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
@@ -121,16 +137,21 @@ public class Create{
 	 * @param File_dir
 	 * @param Contents_To_Add
 	 */
-	public void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) {
+	public void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) 
+	{
 		Method_Name = WordsOnly(Method_Name); // used to help search for
-		try {
-			List<String> fileContents = new ArrayList<>(
-					Files.readAllLines(Paths.get(File_Dir), StandardCharsets.UTF_8));
-			for (int i = 0; i < fileContents.size(); i++) {
+		try 
+		{
+			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(File_Dir), StandardCharsets.UTF_8));
+			for (int i = 0; i < fileContents.size(); i++) 
+			{
 				String test = fileContents.get(i); // this is used to help simplify our code
-				if (test.contains(Method_Name)) {
-					for (int j = i; j < fileContents.size(); j++) {
-						if (fileContents.get(j).equals("")) {
+				if (test.contains(Method_Name)) 
+				{
+					for (int j = i; j < fileContents.size(); j++) 
+					{
+						if (fileContents.get(j).equals("")) 
+						{
 							fileContents.set(j, Contents_To_Add + "\n");
 							break;
 						}
@@ -138,7 +159,9 @@ public class Create{
 				}
 			}
 			Files.write(Paths.get(File_Dir), fileContents, StandardCharsets.UTF_8);
-		} catch (IOException e) {
+		}
+		catch (IOException e) 
+		{
 			e.printStackTrace();
 		}
 	}
@@ -150,10 +173,9 @@ public class Create{
 	 * @param simple
 	 * @return String
 	 */
-	public String WordsOnly(String simple) {
+	public String WordsOnly(String simple) 
+	{
 		String Clean = simple.replaceAll("[^a-zA-Z0-9]", "");
 		return Clean;
 	}
-
-
 }
