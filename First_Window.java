@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class First_Window extends JFrame implements ActionListener {
-    Methods M = new Methods();
+    Generic_Methods M = new Generic_Methods();
     private static final long serialVersionUID = 1L;
     /**
      * This method will be better set up later. Right now we just needed a mock
@@ -27,25 +27,25 @@ public class First_Window extends JFrame implements ActionListener {
     //so we decided to make a method here for it
     public void ActionSetter()
     {
-        //create file button action listeners
+        //create file button action listeners, "new file"
         Variables.File_Name_Button.addActionListener(this);
         Variables.Folder_Path_Button.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Variables.INPUT2 = Variables.TR_Text_Area.getText();
-        Variables.INPUT2.toLowerCase(); // for easier coding
+        Variables.User_Input = Variables.TR_Text_Area.getText();
+        Variables.User_Input.toLowerCase(); // for easier coding
         if (e.getSource() == Variables.TR_Enter) 
         {
-            ActionSetter();
-            Methods.Panel_Name_Setter(); //this is used to set names of panels so for later arguments
-            Methods.Input_Parsing(Variables.INPUT2);
-            Methods.Translation(Variables.INPUT2);
+            ActionSetter(); //this will set all the action listers for all the panel buttons
+            Generic_Methods.Panel_Name_Setter(); //this is used to set names of panels so for later arguments
+            Generic_Methods.Input_Parsing(Variables.User_Input); //Used in our queue so that commands will be put in the correct order
+            Generic_Methods.Translation();//calles the method works out what commands to run
         }
         else 
         {
-            M.actionPerformed(e);
+            M.actionPerformed(e); //this is used so that all other button presses that are used are transfered to the other file to be interperted
         }
     }
 }
