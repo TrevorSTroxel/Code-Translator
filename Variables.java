@@ -1,6 +1,9 @@
+/**
+ * @author Trevor Troxel & Abed Abualkheir
+ * @version 2.0
+ */
 import java.util.LinkedList;
 import java.util.Queue;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;

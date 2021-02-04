@@ -1,7 +1,10 @@
+/**
+ * @author Trevor Troxel & Abed Abualkheir
+ * @version 2.0
+ */
 import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileSystemView;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
