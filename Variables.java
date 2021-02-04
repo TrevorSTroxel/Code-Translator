@@ -29,10 +29,10 @@ public class Variables {
     //File creation variables
     public static JPanel Folder_Panel = new JPanel();
 
-    public static JButton Folder_Path_Button = new JButton("Path button");
+    public static JButton Folder_Path_Button = new JButton("Click to select the folder where you want to create a file");
     public static JTextArea Folder_Path_Text_Area = new JTextArea(1, 20);
 
-    public static JButton File_Name_Button = new JButton("name button");
+    public static JButton File_Name_Button = new JButton("Click this button once you have typed what you want to name the file");
     public static JTextArea File_Name_Text_Area = new JTextArea(1, 20);
     ////////////////////////////////////////////////////////////////////////
 
