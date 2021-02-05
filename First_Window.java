@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 public class First_Window extends JFrame implements ActionListener 
 {
-    Generic_Methods M = new Generic_Methods(); //only time we will create an object, as we need it to move the action inputs
+    Button_Clicked BC = new Button_Clicked();
     private static final long serialVersionUID = 1L; //makes VSCode
     
     /**
@@ -27,7 +27,6 @@ public class First_Window extends JFrame implements ActionListener
         Variables.Translator.add(Variables.TR_Panel);
         Variables.Translator.setVisible(true);
     }
-
 
     /**
      * we can not use "this" in static context, so we decided
@@ -58,7 +57,7 @@ public class First_Window extends JFrame implements ActionListener
         }
         else 
         {
-            M.actionPerformed(e); //this is used so that all other button presses that are used are transfered to the other file to be interperted
+            BC.actionPerformed(e); //this is used so that all other button presses that are used are transfered to the other file to be interperted
         }
     }
 }
