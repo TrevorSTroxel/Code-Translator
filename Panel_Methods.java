@@ -5,10 +5,13 @@
 import javax.swing.JFrame;
 import java.awt.GridLayout;
 
-public class Panel_Methods {
-    //this is where all the panels we create will be set up in
-    // Input_Window method is used to add the correct panel to the program
-    
+public class Panel_Methods 
+{
+	/**
+	 * this is where all the panels we create will be set up in
+	 * Input_Window method is used to add the correct panel to the program
+	 */
+
     public static void Input_Window(String JP) // we have to grab the name of the panel input to set it correctly
 	{
 		Variables.Input_Window.getContentPane().removeAll();// This is to make sure that the window is reuseable every time
@@ -32,9 +35,12 @@ public class Panel_Methods {
 		Variables.Input_Window.repaint();
 	}
 
-    //This is the Panel settings for File Creation
-    //this called when "new file" is typed
-    //the action listers for the buttons were moved because they can not be called statically
+
+	/**
+	 * This is the Panel settings for File Creation
+	 * this called when "new file" is typed
+	 * the action listers for the buttons were moved because they can not be called statically
+	 */
 	public static void File_Creation_Panel() 
 	{
 		Variables.Folder_Panel.setLayout(new GridLayout(2, 2));

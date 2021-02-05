@@ -9,10 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-//We store all our variables in here for better organization
-//We also made them all static so that we can grab them at any point
-//look more into why static makes things work for our program
-public class Variables {
+/**
+ * We store all our variables in here for better organization
+ * We also made them all static so that we can grab them at any point
+ * look more into why static makes things work for our program
+ */
+public class Variables 
+{
     // These variables are for creating the starting window
     public static JFrame Translator = new JFrame("Translator");
     public static JPanel TR_Panel = new JPanel();
