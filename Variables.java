@@ -42,7 +42,14 @@ public class Variables
     public static JButton File_Name_Button = new JButton("Click this button once you have typed what you want to name the file");
     public static JTextArea File_Name_Text_Area = new JTextArea(1, 20);
     ////////////////////////////////////////////////////////////////////////
+    //Adding content variables
+    public static JPanel Content_Panel = new JPanel();
 
+    public static JButton File_Path_Button = new JButton("Click to select the file you want to add content to");
+    public static JTextArea File_Path_Text_Area = new JTextArea(1, 20);
+
+    public static JButton File_Add_Content_Button = new JButton("Click this button once you have typed what you want the program to say");
+    public static JTextArea File_Add_Content_Text_Area = new JTextArea(1, 20);
     ////////////////////////////////////////////////////////////////////////
     // testing variables
     public static JPanel File_Naming_test_EX = new JPanel();

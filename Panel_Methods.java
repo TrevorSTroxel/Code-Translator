@@ -25,7 +25,7 @@ public class Panel_Methods
 		} 
         else if (JP == "File naming") 
 		{
-			Variables.Input_Window.add(Variables.File_Naming_test_EX);
+			Variables.Input_Window.add(Variables.Content_Panel);
 		}
 
 		Variables.Input_Window.setVisible(true);
@@ -52,5 +52,17 @@ public class Panel_Methods
 
 		Variables.Folder_Panel.add(Variables.Remove);
 	}
-    
+
+	public static void Add_Content_Panel()
+	{
+		Variables.Content_Panel.setLayout(new GridLayout(3, 2));
+
+		Variables.Content_Panel.add(Variables.File_Path_Button);
+		Variables.Content_Panel.add(Variables.File_Path_Text_Area);
+
+		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
+		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
+
+		Variables.Folder_Panel.add(Variables.Remove);
+	}
 }

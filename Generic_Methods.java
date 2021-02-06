@@ -19,7 +19,8 @@ public class Generic_Methods
         }
         else if (Variables.Order_Of_Commands.peek().equals("say"))
         {
-			Panel_Methods.Input_Window("File naming"); //dummy panel right now. will set up actual panel later
+			Panel_Methods.Add_Content_Panel();
+			Panel_Methods.Input_Window("File says"); //dummy panel right now. will set up actual panel later
         }
     }
 
@@ -27,6 +28,7 @@ public class Generic_Methods
 	public static void Panel_Name_Setter() 
 	{
 		Variables.Folder_Panel.setName("Folder Panel");
+		Variables.Content_Panel.setName("File says");
 	}
 
 	//this allows the users to click a button and set either the folder location or the file location

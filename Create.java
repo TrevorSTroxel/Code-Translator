@@ -39,7 +39,7 @@ public class Create
 	 * @param file_directory
 	 * @param file_name
 	 */
-	public static void create_file(String file_directory, String file_name) 
+	public static void Create_File(String file_directory, String file_name) 
 	{
 		try 
 		{
@@ -68,14 +68,32 @@ public class Create
 	 * file, so if a user wants to run the program, they are able to.
 	 * 
 	 * @param file_path
-	 * @param class_name
+	 * @param Content_Say
 	 */
-	public void creatr_class(String file_path, String class_name) 
+	public static void Create_Class(String file_path, String Content_Say) 
 	{
+		//these are for testing purposes
+		File file = new File(file_path);
+		String GenericHolder = new String();
+		if (file.exists())
+		{
+			GenericHolder = file.getName();
+		}
+		else
+		{
+			GenericHolder = "test";
+		}
+
 		try 
 		{
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-			fileContents.add("public class " + class_name + "{\n public  void main(String[] args) {\n\n} \n}");
+			fileContents.add("public class " + GenericHolder + 
+			"{\n" +
+				"	public void main(String[] args)" +
+				"	{\n"+
+				"	" + "System.out.println(" + Content_Say + ")"+
+				"	\n}"+
+			"\n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
 		} 
 		catch (IOException e) 
@@ -95,7 +113,7 @@ public class Create
 	 * @param return_type
 	 * @param method_name
 	 */
-	public void create_method(String File_Directory, String return_type, String method_name) 
+	public static void Create_Method(String File_Directory, String return_type, String method_name) 
 	{
 		try 
 		{
@@ -137,7 +155,7 @@ public class Create
 	 * @param File_dir
 	 * @param Contents_To_Add
 	 */
-	public void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) 
+	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) 
 	{
 		Method_Name = WordsOnly(Method_Name); // used to help search for
 		try 
@@ -173,7 +191,7 @@ public class Create
 	 * @param simple
 	 * @return String
 	 */
-	public String WordsOnly(String simple) 
+	public static String WordsOnly(String simple) 
 	{
 		String Clean = simple.replaceAll("[^a-zA-Z0-9]", "");
 		return Clean;
