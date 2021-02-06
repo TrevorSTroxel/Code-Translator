@@ -31,6 +31,7 @@ public class Variables
     public static String Paramater2 = new String();
     ////////////////////////////////////////////////////////////////////////
     public static JFrame Input_Window = new JFrame(); //The secondary window that is reused several times
+    public static JButton Remove = new JButton("Click this button to move onto the next command"); //pressing this will remove the top element from the queue to move to the next command
     ////////////////////////////////////////////////////////////////////////
     //File creation variables
     public static JPanel Folder_Panel = new JPanel();

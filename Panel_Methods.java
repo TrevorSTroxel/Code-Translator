@@ -11,7 +11,6 @@ public class Panel_Methods
 	 * this is where all the panels we create will be set up in
 	 * Input_Window method is used to add the correct panel to the program
 	 */
-
     public static void Input_Window(String JP) // we have to grab the name of the panel input to set it correctly
 	{
 		Variables.Input_Window.getContentPane().removeAll();// This is to make sure that the window is reuseable every time
@@ -43,13 +42,15 @@ public class Panel_Methods
 	 */
 	public static void File_Creation_Panel() 
 	{
-		Variables.Folder_Panel.setLayout(new GridLayout(2, 2));
+		Variables.Folder_Panel.setLayout(new GridLayout(3, 2));
 
 		Variables.Folder_Panel.add(Variables.Folder_Path_Button);
 		Variables.Folder_Panel.add(Variables.Folder_Path_Text_Area);
 
 		Variables.Folder_Panel.add(Variables.File_Name_Button);
 		Variables.Folder_Panel.add(Variables.File_Name_Text_Area);
+
+		Variables.Folder_Panel.add(Variables.Remove);
 	}
     
 }

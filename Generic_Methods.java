@@ -42,7 +42,7 @@ public class Generic_Methods
 			}
 		}
 
-		else if (i == 2)
+		else if (i == 2) //used to select files
 		{
 			JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory()); //this opens up a crude file explorer for the user to use
 			j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES); //this makes it so that they can only select folder locations

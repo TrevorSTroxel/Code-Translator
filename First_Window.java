@@ -37,6 +37,9 @@ public class First_Window extends JFrame implements ActionListener
     public void ActionSetter()
     {
         //////////////////////////////////////////////////////
+        //this button will be added to all panels
+        Variables.Remove.addActionListener(this);
+        //////////////////////////////////////////////////////
         //create file button action listeners, "new file"
         Variables.File_Name_Button.addActionListener(this);
         Variables.Folder_Path_Button.addActionListener(this);
@@ -54,6 +57,11 @@ public class First_Window extends JFrame implements ActionListener
             Generic_Methods.Panel_Name_Setter(); //this is used to set names of panels so for later arguments
             Generic_Methods.Input_Parsing(Variables.User_Input); //Used in our queue so that commands will be put in the correct order
             Generic_Methods.Translation();//calles the method works out what commands to run
+        }
+        else if (e.getSource() == Variables.Remove)
+        {
+            Variables.Order_Of_Commands.poll(); //removes the top most element from the queue
+			Generic_Methods.Translation(); //called again to run the next command
         }
         else 
         {
