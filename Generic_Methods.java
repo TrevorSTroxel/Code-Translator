@@ -19,8 +19,8 @@ public class Generic_Methods
         }
         else if (Variables.Order_Of_Commands.peek().equals("say"))
         {
-			Panel_Methods.Add_Content_Panel();
-			Panel_Methods.Input_Window("File says"); //dummy panel right now. will set up actual panel later
+			Panel_Methods.Add_Content_Panel(); //content adding panel settings
+			Panel_Methods.Input_Window("File says"); //calles the method to get the second window
         }
     }
 
