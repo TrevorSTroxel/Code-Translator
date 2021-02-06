@@ -23,7 +23,7 @@ public class Panel_Methods
 		{
 			Variables.Input_Window.add(Variables.Folder_Panel);
 		} 
-        else if (JP == "File naming") 
+        else if (JP == "File says") 
 		{
 			Variables.Input_Window.add(Variables.Content_Panel);
 		}
@@ -63,6 +63,6 @@ public class Panel_Methods
 		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
 		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
 
-		Variables.Folder_Panel.add(Variables.Remove);
+		Variables.Content_Panel.add(Variables.Remove);
 	}
 }
