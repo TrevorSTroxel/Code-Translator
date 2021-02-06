@@ -55,6 +55,19 @@ public class First_Window extends JFrame implements ActionListener
         //////////////////////////////////////////////////////
     }
 
+    //made this method so that the program does not try to run commands when the queue is empty
+    public void Queue_Check()
+    {
+        if (!Variables.Order_Of_Commands.isEmpty())
+        {
+            Variables.Order_Of_Commands.poll();//removes the top most element from the queue
+        }
+        else
+        {
+            System.out.println("The commands are all done");
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) 
     {
@@ -69,7 +82,7 @@ public class First_Window extends JFrame implements ActionListener
         }
         else if (e.getSource() == Variables.Remove)
         {
-            Variables.Order_Of_Commands.poll(); //removes the top most element from the queue
+            Queue_Check();
 			Generic_Methods.Translation(); //called again to run the next command
         }
         else 
