@@ -73,11 +73,13 @@ public class Create
 	public static void Create_Class(String file_path, String Content_Say) 
 	{
 		//these are for testing purposes
+		//probable just keep them here
 		File file = new File(file_path);
 		String GenericHolder = new String();
 		if (file.exists())
 		{
-			GenericHolder = file.getName();
+			Variables.Words = file.getName().split(".");
+			GenericHolder = Variables.Words[0];
 		}
 		else
 		{
