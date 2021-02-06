@@ -27,6 +27,7 @@ public class Variables
     public static Queue<String> Order_Of_Commands = new LinkedList<>(); //used to store all the commands that the user has put into it
     ////////////////////////////////////////////////////////////////////////
     // generic variables that we call on to re-use at anytime
+    public static String[] Words;
     public static String Paramater1 = new String();
     public static String Paramater2 = new String();
     ////////////////////////////////////////////////////////////////////////
