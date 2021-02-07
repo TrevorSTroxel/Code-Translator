@@ -41,6 +41,8 @@ public class Panel_Methods
 
 	/**
 	 * Sets up the window for the user to read the instructions
+	 * Imported from our old code, as this is still reauseable
+	 * Did not want to re-invent the wheel
 	 */
 	public static void Help_Settings()
 	{
@@ -59,7 +61,6 @@ public class Panel_Methods
         Variables.Input_Window.setVisible(true);
 	}
 
-
 	/**
 	 * This is the Panel settings for File Creation
 	 * this called when "new file" is typed
@@ -76,8 +77,15 @@ public class Panel_Methods
 		Variables.Folder_Panel.add(Variables.File_Name_Text_Area);
 
 		Variables.Folder_Panel.add(Variables.Remove);
+		Variables.Remove.setEnabled(false);
 	}
 
+	/**
+	 * Panel settings for adding content
+	 * will fiddle around with this as this could save us a lot of space and codeing later on
+	 * what I mean is that we can call this panel multiple times and depending on what input (method paramater)
+	 * we give it, this can be called multiple times
+	 */
 	public static void Add_Content_Panel()
 	{
 		Variables.Content_Panel.setLayout(new GridLayout(3, 2));
@@ -88,6 +96,7 @@ public class Panel_Methods
 		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
 		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
 
-		Variables.Content_Panel.add(Variables.Remove);
+		Variables.Content_Panel.add(Variables.Remove); //this variable will always be added last
+		Generic_Methods.Remove_Button_Enabler(0);
 	}
 }
