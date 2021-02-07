@@ -4,13 +4,11 @@
  * @version 2.0
  */
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Dimension;
-import java.awt.Font;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -77,29 +75,22 @@ public class First_Window extends JFrame implements ActionListener
         }
     }
 
-    public void Help() {
-        //This code was imported from our other project
-        //we decided that since it was already there and still useable, why not just use it again
-        // Read some text from the resource file to display in the JTextArea.
-        try {
+    public void Help() 
+    {
+        /**
+         * This code was imported from our other project
+         * we decided that since it was already there and still useable, why not just use it again
+         * Read some text from the resource file to display in the JTextArea.
+         */
+        try 
+        {
             Variables.Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
-        } catch (IOException e) {
+        } 
+        catch (IOException e) 
+        {
             e.printStackTrace();
         }
-
-        Variables.Instructions.setEditable(false); // the user can't edit the text
-        Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
-        Variables.Instructions.setFont(f); // sets the style of the text
-        JScrollPane iscrollPane = new JScrollPane(Variables.Instructions); // we have a large txt document, so this is
-                                                                           // used to see all the contents of it
-        iscrollPane.setPreferredSize(new Dimension(650, 500)); // sets up how much room is seen on the text file
-        Variables.Help_Panel.add(iscrollPane);
-        Variables.Help_Panel.setEnabled(true);
-
-        Variables.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Variables.Input_Window.setSize(700, 700);
-        Variables.Input_Window.add(Variables.Help_Panel);
-        Variables.Input_Window.setVisible(true);
+        Panel_Methods.Help_Settings();
     }
 
     @Override
