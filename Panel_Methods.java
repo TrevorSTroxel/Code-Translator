@@ -4,6 +4,10 @@
  */
 import javax.swing.JFrame;
 import java.awt.GridLayout;
+import java.awt.Dimension;
+import java.awt.Font;
+import javax.swing.JScrollPane;
+
 
 public class Panel_Methods 
 {
@@ -32,6 +36,27 @@ public class Panel_Methods
         //the bottom two commands make it so the window refreshes itself so that the use does not have to move it
 		Variables.Input_Window.getContentPane().validate();
 		Variables.Input_Window.repaint();
+	}
+
+
+	/**
+	 * Sets up the window for the user to read the instructions
+	 */
+	public static void Help_Settings()
+	{
+		Variables.Instructions.setEditable(false); // the user can't edit the text
+        Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
+        Variables.Instructions.setFont(f); // sets the style of the text
+        JScrollPane iscrollPane = new JScrollPane(Variables.Instructions); // we have a large txt document, so this is
+                                                                           // used to see all the contents of it
+        iscrollPane.setPreferredSize(new Dimension(650, 500)); // sets up how much room is seen on the text file
+        Variables.Help_Panel.add(iscrollPane);
+        Variables.Help_Panel.setEnabled(true);
+
+        Variables.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Variables.Input_Window.setSize(700, 700);
+        Variables.Input_Window.add(Variables.Help_Panel);
+        Variables.Input_Window.setVisible(true);
 	}
 
 
