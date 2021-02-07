@@ -75,26 +75,17 @@ public class Create
 		//these are for testing purposes
 		//probable just keep them here
 		File file = new File(file_path);
-		String GenericHolder = new String();
-		if (file.exists())
-		{
-			Variables.Words = file.getName().split(".");
-			GenericHolder = Variables.Words[0];
-		}
-		else
-		{
-			GenericHolder = "test";
-		}
-
+		String[] tokens = file.getName().split("[\\.]");
+		String NameHolder = tokens[0];
 		try 
 		{
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-			fileContents.add("public class " + GenericHolder + 
+			fileContents.add("public class " + NameHolder + "\n" +
 			"{\n" +
-				"	public void main(String[] args)" +
-				"	{\n"+
-				"	" + "System.out.println(" + Content_Say + ")"+
-				"	\n}"+
+				"\tpublic void main(String[] args)" +
+				"\t{\n"+
+				"\t\tSystem.out.println(" + Content_Say + ")"+
+				"\t\n}"+
 			"\n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
 		} 
