@@ -44,6 +44,8 @@ public class Create
 	 */
 	public static void Create_File(String file_directory, String file_name) 
 	{
+		String testing[] = file_name.split("[ |\\.]"); //this will seperate any spaces and . found in the file name the user put int
+		file_name = testing[0] + ".java";
 		try 
 		{
 			File new_file = new File(file_directory + "\\" + file_name);
@@ -76,14 +78,14 @@ public class Create
 	 */
 	public static void Create_Class(String file_path) 
 	{
-		//these are for testing purposes
-		//probable just keep them here
-		File file = new File(file_path); //creats a file
-		String[] tokens = file.getName().split("[\\.]"); //this grabs the name of the file and splits it up between the name and the extention
-		String NameHolder = tokens[0]; //puts the proper name inside the case
+		File file = new File(file_path); //this creats a file for the program to use
+		String[] File_Name_Array = file.getName().split("[\\.]"); //this grabs the name of the file and splits it up between the name and the extention
+		String NameHolder = File_Name_Array[0].toLowerCase(); //puts the proper name inside the case, also makes it all lower case for our sanity
 		try 
 		{
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
+			if (NameHolder.equals("main")) { //if they want to make a main function, this adds the functionality to run the program
+			//We formatted it like this so we can get a better picture of what things will look like in the file
 			fileContents.add("public class " + NameHolder +
 			"\n{\n" +
 				"\tpublic void main(String[] args)" +
@@ -91,6 +93,14 @@ public class Create
 				"\n\t}\n"+
 			"\n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
+			}
+			else { //this is for every other file name
+				fileContents.add("public class " + NameHolder +
+				"\n{\n" +
+				"\n}");
+				Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
+			}
+
 		} 
 		catch (IOException e) 
 		{
