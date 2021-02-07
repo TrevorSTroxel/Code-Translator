@@ -47,8 +47,10 @@ public class Create
 		try 
 		{
 			File new_file = new File(file_directory + "\\" + file_name);
+			String test = new String(file_directory + "\\" + file_name);
 			new_file.getParentFile().mkdirs();
 			new_file.createNewFile();
+			Create_Class(test);
 		} 
 		catch (FileAlreadyExistsException e) 
 		{ 
