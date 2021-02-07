@@ -37,7 +37,8 @@ public class Button_Clicked implements ActionListener
 		else if (e.getSource() == Variables.File_Add_Content_Button)
 		{
 			Variables.Paramater2 = Variables.File_Add_Content_Text_Area.getText(); //sets the text in the file name area to the generic paramater2
-			Create.Create_Class(Variables.Paramater1, Variables.Paramater2); //runs our file creation method using our paramaters
+			//wont be needing this soon
+			Create.Create_Class(Variables.Paramater1); //runs our file creation method using our paramaters
 		}
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

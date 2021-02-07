@@ -38,6 +38,9 @@ public class Create
 	 * 
 	 * @param file_directory
 	 * @param file_name
+	 * 
+	 * idea. when we create the file we should also create the class att the same time
+	 * i will attempt this now
 	 */
 	public static void Create_File(String file_directory, String file_name) 
 	{
@@ -57,7 +60,6 @@ public class Create
 			e.printStackTrace();
 		}
 	}
-
 	/**
 	 * What this will do is create a class inside the file that they have selected.
 	 * this method grabs all the content of that file and adds a class to the top of
@@ -69,19 +71,14 @@ public class Create
 	 * 
 	 * @param file_path
 	 * @param Content_Say
-	 * 
-	 * Thinking about it more, I was thinking that we should have ne methods that are
-	 * formatted differently that what we currently have.
-	 * They will have different paramaters
-	 * or maybe we just need to re-organize and move around things
 	 */
-	public static void Create_Class(String file_path, String Content_Say) 
+	public static void Create_Class(String file_path) 
 	{
 		//these are for testing purposes
 		//probable just keep them here
-		File file = new File(file_path);
-		String[] tokens = file.getName().split("[\\.]");
-		String NameHolder = tokens[0];
+		File file = new File(file_path); //creats a file
+		String[] tokens = file.getName().split("[\\.]"); //this grabs the name of the file and splits it up between the name and the extention
+		String NameHolder = tokens[0]; //puts the proper name inside the case
 		try 
 		{
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
@@ -89,7 +86,6 @@ public class Create
 			"\n{\n" +
 				"\tpublic void main(String[] args)" +
 				"\n\t{\n"+
-				"\t\tSystem.out.println(" + Content_Say + ")" +
 				"\n\t}\n"+
 			"\n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
@@ -115,22 +111,23 @@ public class Create
 	{
 		try 
 		{
+			//this reads all the lines in the selected file path
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(File_Directory), StandardCharsets.UTF_8));
-			for (int i = 0; i < fileContents.size(); i++) 
+			for (int i = 0; i < fileContents.size(); i++) //this will iterate through all the lines that the file has
 			{
-				String testing = fileContents.get(i);
-				if (testing.contains("class")) 
-				{
-					for (int j = i; j < fileContents.size(); j++) 
+				String testing = fileContents.get(i); //this puts the contents of what ever line the program is in into a string to search for stuff later
+				if (testing.contains("class")) //this looks for the "public class (name)" part of the code
+				{ //once it finds where class is, it then tries to find the next empty spot it can to make a method
+					for (int j = i; j < fileContents.size(); j++) //this starts a new loop to interate through to check for empty spaces
 					{
-						if (fileContents.get(j).equals("")) 
+						if (fileContents.get(j).equals("")) //found an empty line
 						{
 							fileContents.set(j, "public " + return_type + " " + method_name + "(){\n\n}");
 						}
 					}
 				}
 			}
-			Files.write(Paths.get(File_Directory), fileContents, StandardCharsets.UTF_8);
+			Files.write(Paths.get(File_Directory), fileContents, StandardCharsets.UTF_8); //writes a method to the file
 			System.out.println("Successfully wrote to the file.");
 		} 
 		catch (IOException e) 
