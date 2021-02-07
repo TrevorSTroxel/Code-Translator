@@ -82,12 +82,9 @@ public class First_Window extends JFrame implements ActionListener
          * we decided that since it was already there and still useable, why not just use it again
          * Read some text from the resource file to display in the JTextArea.
          */
-        try 
-        {
+        try {
             Variables.Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
-        } 
-        catch (IOException e) 
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         Panel_Methods.Help_Settings();
