@@ -31,14 +31,13 @@ public class Button_Clicked implements ActionListener
 		//add content panel buttons
 		else if (e.getSource() == Variables.File_Path_Button)
 		{
-			Generic_Methods.Location(Variables.File_Path_Text_Area, 2); //grabs the text in the folder path area
-			Variables.Paramater1 = Variables.File_Path_Text_Area.getText(); //sets the generic paramater1 to hold the folder location
+			//need to come back to and fix things
+			// Generic_Methods.Location(Variables.File_Path_Text_Area, 2); //grabs the text in the folder path area
+			// Variables.Paramater1 = Variables.File_Path_Text_Area.getText(); //sets the generic paramater1 to hold the folder location
 		}
 		else if (e.getSource() == Variables.File_Add_Content_Button)
 		{
-			Variables.Paramater2 = Variables.File_Add_Content_Text_Area.getText(); //sets the text in the file name area to the generic paramater2
-			//wont be needing this soon
-			Create.Create_Class(Variables.Paramater1); //runs our file creation method using our paramaters
+			//need to come back and fix things
 		}
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
