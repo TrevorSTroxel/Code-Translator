@@ -69,6 +69,11 @@ public class Create
 	 * 
 	 * @param file_path
 	 * @param Content_Say
+	 * 
+	 * Thinking about it more, I was thinking that we should have ne methods that are
+	 * formatted differently that what we currently have.
+	 * They will have different paramaters
+	 * or maybe we just need to re-organize and move around things
 	 */
 	public static void Create_Class(String file_path, String Content_Say) 
 	{
@@ -80,12 +85,12 @@ public class Create
 		try 
 		{
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-			fileContents.add("public class " + NameHolder + "\n" +
-			"{\n" +
+			fileContents.add("public class " + NameHolder +
+			"\n{\n" +
 				"\tpublic void main(String[] args)" +
-				"\t{\n"+
-				"\t\tSystem.out.println(" + Content_Say + ")"+
-				"\t\n}"+
+				"\n\t{\n"+
+				"\t\tSystem.out.println(" + Content_Say + ")" +
+				"\n\t}\n"+
 			"\n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
 		} 
