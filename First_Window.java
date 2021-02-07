@@ -1,11 +1,18 @@
+
 /**
  * @author Trevor Troxel & Abed Abualkheir
  * @version 2.0
  */
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class First_Window extends JFrame implements ActionListener 
 {
@@ -20,10 +27,12 @@ public class First_Window extends JFrame implements ActionListener
     {
         Variables.Translator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Variables.Translator.setSize(500, 500);
-        Variables.TR_Enter.addActionListener(this);
-        Variables.TR_Panel.setLayout(new GridLayout(2, 1));
+        Variables.TR_Panel.setLayout(new GridLayout(3, 1));
         Variables.TR_Panel.add(Variables.TR_Text_Area);
         Variables.TR_Panel.add(Variables.TR_Enter);
+        Variables.TR_Panel.add(Variables.test); //this will change from time to time, meaning that we will remove it sometimes and other times we will keep it  
+        Variables.TR_Enter.addActionListener(this);
+        Variables.test.addActionListener(this);        
         Variables.Translator.add(Variables.TR_Panel);
         Variables.Translator.setVisible(true);
     }
@@ -62,10 +71,35 @@ public class First_Window extends JFrame implements ActionListener
         {
             Variables.Order_Of_Commands.poll();//removes the top most element from the queue
         }
-        else
+        else if (Variables.Order_Of_Commands.isEmpty())
         {
             System.out.println("The commands are all done");
         }
+    }
+
+    public void Help() {
+        //This code was imported from our other project
+        //we decided that since it was already there and still useable, why not just use it again
+        // Read some text from the resource file to display in the JTextArea.
+        try {
+            Variables.Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Variables.Instructions.setEditable(false); // the user can't edit the text
+        Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
+        Variables.Instructions.setFont(f); // sets the style of the text
+        JScrollPane iscrollPane = new JScrollPane(Variables.Instructions); // we have a large txt document, so this is
+                                                                           // used to see all the contents of it
+        iscrollPane.setPreferredSize(new Dimension(650, 500)); // sets up how much room is seen on the text file
+        Variables.Help_Panel.add(iscrollPane);
+        Variables.Help_Panel.setEnabled(true);
+
+        Variables.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Variables.Input_Window.setSize(700, 700);
+        Variables.Input_Window.add(Variables.Help_Panel);
+        Variables.Input_Window.setVisible(true);
     }
 
     @Override
@@ -79,6 +113,10 @@ public class First_Window extends JFrame implements ActionListener
             Generic_Methods.Panel_Name_Setter(); //this is used to set names of panels so for later arguments
             Generic_Methods.Input_Parsing(Variables.User_Input); //Used in our queue so that commands will be put in the correct order
             Generic_Methods.Translation();//calles the method works out what commands to run
+        }
+        else if (e.getSource() == Variables.test)
+        {
+            Help();
         }
         else if (e.getSource() == Variables.Remove)
         {

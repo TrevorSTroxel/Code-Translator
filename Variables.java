@@ -21,8 +21,11 @@ public class Variables
     public static JPanel TR_Panel = new JPanel();
     public static JTextArea TR_Text_Area = new JTextArea(1, 20);
     public static JButton TR_Enter = new JButton("Enter");
-    public static JButton test = new JButton("test");
     public static String User_Input = new String();
+    //testing variables for the first planel
+    public static JButton test = new JButton("testing help file");
+    public static JTextArea Instructions = new JTextArea(20, 20);
+    public static JPanel Help_Panel = new JPanel();
     ////////////////////////////////////////////////////////////////////////
     public static Queue<String> Order_Of_Commands = new LinkedList<>(); //used to store all the commands that the user has put into it
     ////////////////////////////////////////////////////////////////////////
