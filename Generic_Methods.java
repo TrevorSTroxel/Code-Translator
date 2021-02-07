@@ -55,7 +55,6 @@ public class Generic_Methods
 		}
     }
 
-
 	/**
 	 * This will put certain things in the queue in order so that
 	 * no matter where the user types the commands, the program will put them in the correct order
@@ -74,5 +73,4 @@ public class Generic_Methods
 			Variables.Order_Of_Commands.add("say");
 		}
 	}
-
 }
