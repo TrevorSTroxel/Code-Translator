@@ -42,7 +42,6 @@ public class Panel_Methods
 		Variables.Input_Window.repaint();
 	}
 
-
 	/**
 	 * Sets up the window for the user to read the instructions
 	 * Imported from our old code, as this is still reauseable
