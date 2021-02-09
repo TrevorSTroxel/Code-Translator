@@ -18,7 +18,7 @@ public class Panel_Methods
     public static void Input_Window(String JP) // we have to grab the name of the panel input to set it correctly
 	{
 		Variables.Input_Window.getContentPane().removeAll();// This is to make sure that the window is reuseable every time
-		Variables.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Variables.Input_Window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		Variables.Input_Window.setSize(500, 500);
 
         //We need this to set the correct panels to the correct statements
@@ -58,7 +58,7 @@ public class Panel_Methods
         Variables.Help_Panel.add(iscrollPane);
         Variables.Help_Panel.setEnabled(true);
 
-        Variables.Input_Window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Variables.Input_Window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Variables.Input_Window.setSize(700, 700);
         Variables.Input_Window.add(Variables.Help_Panel);
         Variables.Input_Window.setVisible(true);
