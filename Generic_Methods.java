@@ -20,7 +20,7 @@ public class Generic_Methods
         else if (Variables.Order_Of_Commands.peek().equals("say"))
         {
 			Panel_Methods.Add_Content_Panel(); //content adding panel settings
-			Panel_Methods.Input_Window("File says"); //calles the method to get the second window
+			Panel_Methods.Input_Window("Add to file"); //calles the method to get the second window
         }
     }
 
@@ -30,13 +30,24 @@ public class Generic_Methods
 	 * and then run the commands in the proer order they must go in.
 	 * More commands will be add later that can be interperted and added to the queue
 	 * @param User_Input
+	 * 
+	 * We also have to make sure that when we add things to this queue, they go in a logical order
+	 * we can think about the logic of how commands should be interperted at a later point, but for now
+	 * we are just trying to get our program worrking correctly
 	 */
 	public static void Input_Parsing(String User_Input)
 	{
+		//if the user wants to make a new file
 		if (User_Input.contains("new file"))
 		{
 			Variables.Order_Of_Commands.add("new file");
 		}
+		//if the user wants to make a method
+		if (User_Input.contains("make")) //may want to change later to be something easier to type in a nromal sentence, but for now this is what we have
+		{
+			Variables.Order_Of_Commands.add("make");
+		}
+		//this is subject to change for what the user can say to trigger this, but this will be where the user asks where to put stuff
 		if (User_Input.contains("say"))
 		{
 			Variables.Order_Of_Commands.add("say");
@@ -47,7 +58,8 @@ public class Generic_Methods
 	public static void Panel_Name_Setter() 
 	{
 		Variables.Folder_Panel.setName("Folder Panel");
-		Variables.Content_Panel.setName("File says");
+		Variables.Method_Panel.setName("Method creation");
+		Variables.Content_Panel.setName("Add to file");
 	}
 
 	//this allows the users to click a button and set either the folder location or the file location
