@@ -17,6 +17,11 @@ public class Generic_Methods
             Panel_Methods.File_Creation_Panel(); //used to run the file creation panel settings
             Panel_Methods.Input_Window("Folder Panel"); //sets the second window panel to the correct one
         }
+		else if (Variables.Order_Of_Commands.peek().equals("make"))
+        {
+			Panel_Methods.Method_Adding_Panel(); //content adding panel settings
+			Panel_Methods.Input_Window("Method creation"); //calles the method to get the second window
+        }
         else if (Variables.Order_Of_Commands.peek().equals("say"))
         {
 			Panel_Methods.Add_Content_Panel(); //content adding panel settings
