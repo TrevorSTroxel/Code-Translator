@@ -32,6 +32,7 @@ public class Variables
     // generic variables that we call on to re-use at anytime
     public static String Paramater1 = new String();
     public static String Paramater2 = new String();
+    public static String Paramater3 = new String();
     ////////////////////////////////////////////////////////////////////////
     public static JFrame Input_Window = new JFrame(); //The secondary window that is reused several times
     public static JButton Remove = new JButton("Click this button to move onto the next command"); //pressing this will remove the top element from the queue to move to the next command
@@ -44,6 +45,19 @@ public class Variables
 
     public static JButton File_Name_Button = new JButton("Click this button once you have typed what you want to name the file");
     public static JTextArea File_Name_Text_Area = new JTextArea(1, 20);
+    ////////////////////////////////////////////////////////////////////////
+    //adding methods to the file variable
+    public static JPanel Method_Panel = new JPanel();
+
+    public static JButton File_Button = new JButton("Click to select the folder where you want to create a file");
+    public static JTextArea File_Text_Area = new JTextArea(1, 20);
+
+    public static JButton Return_Type_Button = new JButton("Enter the return type of your method");
+    public static JTextArea Return_Type_Text_Area = new JTextArea(1, 20);
+
+    public static JButton Method_Name_Button = new JButton("Enter what you want to name your method");
+    public static JTextArea Method_Name_Text_Area = new JTextArea(1, 20);
+
     ////////////////////////////////////////////////////////////////////////
     //Adding content variables
     public static JPanel Content_Panel = new JPanel();
