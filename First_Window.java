@@ -51,10 +51,14 @@ public class First_Window extends JFrame implements ActionListener
         Variables.Folder_Path_Button.addActionListener(this);
         Variables.File_Name_Button.addActionListener(this);
         //////////////////////////////////////////////////////
+        //Adding a mthod to a file action listers, "make"
+        Variables.File_Button.addActionListener(this);
+        Variables.Return_Type_Button.addActionListener(this);
+        Variables.Method_Name_Button.addActionListener(this);
+        //////////////////////////////////////////////////////
         //Adding content action listers, "say"
         Variables.File_Path_Button.addActionListener(this);
         Variables.File_Add_Content_Button.addActionListener(this);
-        //////////////////////////////////////////////////////
         //////////////////////////////////////////////////////
         //////////////////////////////////////////////////////
         //////////////////////////////////////////////////////
