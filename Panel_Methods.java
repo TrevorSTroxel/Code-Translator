@@ -119,7 +119,6 @@ public class Panel_Methods
 		Variables.Content_Panel.add(Variables.File_Path_Text_Area);
 
 		
-
 		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
 		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
 

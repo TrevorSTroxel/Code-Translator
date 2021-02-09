@@ -134,7 +134,10 @@ public class Create
 					{
 						if (fileContents.get(j).equals("")) //found an empty line
 						{
-							fileContents.set(j, "public " + return_type + " " + method_name + "(){\n\n}");
+							fileContents.set(j, 
+							"\tpublic " + return_type + " " + method_name + "()" +
+							"\t\n{" +
+							"\t\n\n}"); //we do 2 new lines because we want to have space inside the method for the user to be able to insert things inside the method
 						}
 					}
 				}
