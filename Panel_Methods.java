@@ -88,7 +88,7 @@ public class Panel_Methods
 	 * purpose of this method is help ease new people into the language by doing it for them
 	 * so they can learn how to do it on there own
 	 */
-	public static void Method_Adding()
+	public static void Method_Adding_Panel()
 	{
 		Variables.Method_Panel.setLayout(new GridLayout(4, 2));
 		
@@ -117,6 +117,8 @@ public class Panel_Methods
 
 		Variables.Content_Panel.add(Variables.File_Path_Button);
 		Variables.Content_Panel.add(Variables.File_Path_Text_Area);
+
+		
 
 		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
 		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
