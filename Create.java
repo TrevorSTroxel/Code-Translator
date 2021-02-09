@@ -136,8 +136,8 @@ public class Create
 						{
 							fileContents.set(j, 
 							"\tpublic " + return_type + " " + method_name + "()" +
-							"\t\n{" +
-							"\t\n\n}"); //we do 2 new lines because we want to have space inside the method for the user to be able to insert things inside the method
+							"\n\t{" +
+							"\n\n\t}"); //we do 2 new lines because we want to have space inside the method for the user to be able to insert things inside the method
 						}
 					}
 				}
