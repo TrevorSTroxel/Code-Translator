@@ -101,7 +101,7 @@ public class Panel_Methods
 		Variables.Method_Panel.add(Variables.Method_Name_Button);
 		Variables.Method_Panel.add(Variables.Method_Name_Text_Area);
 
-		Variables.Folder_Panel.add(Variables.Remove);
+		Variables.Method_Panel.add(Variables.Remove);
 		Generic_Methods.Remove_Button_Enabler(0);
 	}
 
@@ -113,12 +113,14 @@ public class Panel_Methods
 	 */
 	public static void Add_Content_Panel()
 	{
-		Variables.Content_Panel.setLayout(new GridLayout(3, 2));
+		Variables.Content_Panel.setLayout(new GridLayout(4, 2));
 
 		Variables.Content_Panel.add(Variables.File_Path_Button);
 		Variables.Content_Panel.add(Variables.File_Path_Text_Area);
 
-		
+		Variables.Content_Panel.add(Variables.Getting_Method_Name_Button);
+		Variables.Content_Panel.add(Variables.Getting_Method_Name_Text_Area);
+
 		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
 		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
 
