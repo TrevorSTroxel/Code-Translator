@@ -27,9 +27,13 @@ public class Panel_Methods
 		{
 			Variables.Input_Window.add(Variables.Folder_Panel);
 		} 
-        else if (JP == "File says") 
+        else if (JP == Variables.Content_Panel.getName()) 
 		{
 			Variables.Input_Window.add(Variables.Content_Panel);
+		}
+		else if (JP == Variables.Method_Panel.getName()) 
+		{
+			Variables.Input_Window.add(Variables.Method_Panel);
 		}
 
 		Variables.Input_Window.setVisible(true);
@@ -76,8 +80,30 @@ public class Panel_Methods
 		Variables.Folder_Panel.add(Variables.File_Name_Button);
 		Variables.Folder_Panel.add(Variables.File_Name_Text_Area);
 
+		Variables.Folder_Panel.add(Variables.Remove);  //this variable will always be added last
+		Generic_Methods.Remove_Button_Enabler(0); //look at method for discription
+	}
+
+	/**
+	 * This method will add a method to any given java file that is selected
+	 * purpose of this method is help ease new people into the language by doing it for them
+	 * so they can learn how to do it on there own
+	 */
+	public static void Method_Adding()
+	{
+		Variables.Method_Panel.setLayout(new GridLayout(4, 2));
+		
+		Variables.Method_Panel.add(Variables.File_Button);
+		Variables.Method_Panel.add(Variables.File_Text_Area);
+
+		Variables.Method_Panel.add(Variables.Return_Type_Button);
+		Variables.Method_Panel.add(Variables.Return_Type_Text_Area);
+
+		Variables.Method_Panel.add(Variables.Method_Name_Button);
+		Variables.Method_Panel.add(Variables.Method_Name_Text_Area);
+
 		Variables.Folder_Panel.add(Variables.Remove);
-		Variables.Remove.setEnabled(false);
+		Generic_Methods.Remove_Button_Enabler(0);
 	}
 
 	/**
@@ -96,7 +122,7 @@ public class Panel_Methods
 		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
 		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
 
-		Variables.Content_Panel.add(Variables.Remove); //this variable will always be added last
+		Variables.Content_Panel.add(Variables.Remove);
 		Generic_Methods.Remove_Button_Enabler(0);
 	}
 }
