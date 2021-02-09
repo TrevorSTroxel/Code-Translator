@@ -13,6 +13,9 @@ import javax.swing.JTextArea;
  * We store all our variables in here for better organization
  * We also made them all static so that we can grab them at any point
  * look more into why static makes things work for our program
+ * All possiblt think aobut creating another group of generic variables
+ * of buttons and text area so that there are not so many variables.
+ * will make a copy of this program and experiment with that idea later
  */
 public class Variables 
 {
