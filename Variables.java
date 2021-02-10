@@ -54,8 +54,7 @@ public class Variables
     public static JTextArea Queue_Content = new JTextArea();
     ////////////////////////////////////////////////////////////////////////
     //this section is where we will have the different panels
-    //may think about making a method where it also 
-    //creats a bunch of generic variabels depending on the queue size, but for now it is fine
+
     //File creation variables
     public static JPanel Folder_Panel = new JPanel();
     //adding methods to the file variable

@@ -76,7 +76,6 @@ public class Generic_Methods
 		}
 	}
 
-
 	//this allows the users to click a button and set either the folder location or the file location
 	public static void Location(JTextArea JTA, int i) 
 	{
