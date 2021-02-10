@@ -19,14 +19,15 @@ import javax.swing.JTextArea;
  */
 public class Variables 
 {
+    //these variables may change soon enough. These are unique enough that we may just leave them be
     // These variables are for creating the starting window
-    public static JFrame Translator = new JFrame("Translator");
+    public static JFrame Translator = new JFrame("Code Translator: Learn code by using english");
     public static JPanel TR_Panel = new JPanel();
     public static JTextArea TR_Text_Area = new JTextArea(1, 20);
-    public static JButton TR_Enter = new JButton("Enter");
+    public static JButton TR_Enter = new JButton("Click this button after typing in a sentence above");
     public static String User_Input = new String();
     //testing variables for the first planel
-    public static JButton Help = new JButton("Click if you do not know what to do");
+    public static JButton Help = new JButton("Click this button if you do not know what to do");
     public static JTextArea Instructions = new JTextArea(20, 20);
     public static JPanel Help_Panel = new JPanel();
     ////////////////////////////////////////////////////////////////////////
@@ -35,7 +36,7 @@ public class Variables
     public static JButton Remove = new JButton("Click this button to move onto the next command"); //pressing this will remove the top element from the queue to move to the next command
     ////////////////////////////////////////////////////////////////////////
     // generic variables that we call on to re-use at anytime
-    //File location button to grab the location
+    //File location button to grab the directory
     public static JButton Path_Button = new JButton("Click this to select your folder");
     //This is for when we ask the user to name something, will make a method to change the text later
     public static JButton Naming_Button1 = new JButton("Click this once you have entered a name 1");
