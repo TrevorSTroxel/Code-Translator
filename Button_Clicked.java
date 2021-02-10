@@ -39,7 +39,7 @@ public class Button_Clicked implements ActionListener
 			if (Variables.Folder_Panel.isDisplayable() == true)
 			{
 				Create.Create_File(Variables.Paramater1, Variables.Paramater2); //runs our file creation method using our paramaters
-				Generic_Methods.Remove_Button_Enabler(1);
+				Variables.Remove.setEnabled(true);
 			}
 		}
 		else if (e.getSource() == Variables.Naming_Button2)
@@ -54,7 +54,7 @@ public class Button_Clicked implements ActionListener
 			{
 				Create.Add_To_Method(Variables.Paramater1, Variables.Paramater2, Variables.Paramater3);
 			}
-			Generic_Methods.Remove_Button_Enabler(1);
+			Variables.Remove.setEnabled(true);
 		}
 	}
 
