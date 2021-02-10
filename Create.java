@@ -38,9 +38,6 @@ public class Create
 	 * 
 	 * @param file_directory
 	 * @param file_name
-	 * 
-	 * idea. when we create the file we should also create the class att the same time
-	 * i will attempt this now
 	 */
 	public static void Create_File(String file_directory, String file_name) 
 	{
@@ -56,6 +53,7 @@ public class Create
 		} 
 		catch (FileAlreadyExistsException e) 
 		{ 
+			//Allen put some code here
 			// this is to prevet the program from making a file that already exists
 		} 
 		catch (IOException e) // this is meant to make sure that the commands are being interperted correctly
@@ -84,7 +82,9 @@ public class Create
 		try 
 		{
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-			if (NameHolder.equals("main")) { //if they want to make a main function, this adds the functionality to run the program
+			if (NameHolder.equals("main")) 
+			{ 
+			//if they want to make a main function, this adds the functionality to run the program
 			//We formatted it like this so we can get a better picture of what things will look like in the file
 			fileContents.add("public class " + NameHolder +
 			"\n{\n" +
@@ -94,7 +94,9 @@ public class Create
 			"\n}");
 			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
 			}
-			else { //this is for every other file name
+			else 
+			{ 
+				//this is for every other file name
 				fileContents.add("public class " + NameHolder +
 				"\n{\n" +
 				"\n}");
@@ -110,7 +112,7 @@ public class Create
 	}
 
 	/**
-	 * This method when called ads a method to the selected file the user wants The
+	 * This method when called adds a method to the selected file the user wants The
 	 * method can be called whatever the user wants, but in order to even add this
 	 * their must first be a class inside the file If there is no class, the program
 	 * will not add anything to the file.
@@ -129,7 +131,8 @@ public class Create
 			{
 				String testing = fileContents.get(i); //this puts the contents of what ever line the program is in into a string to search for stuff later
 				if (testing.contains("class")) //this looks for the "public class (name)" part of the code
-				{ //once it finds where class is, it then tries to find the next empty spot it can to make a method
+				{ 
+					//once it finds where class is, it then tries to find the next empty spot it can to make a method
 					for (int j = i; j < fileContents.size(); j++) //this starts a new loop to interate through to check for empty spaces
 					{
 						if (fileContents.get(j).equals("")) //found an empty line
