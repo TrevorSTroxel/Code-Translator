@@ -83,6 +83,6 @@ public class Panel_Methods
 		}
 
 		JP.add(Variables.Remove);
-		Generic_Methods.Remove_Button_Enabler(0);
+		Variables.Remove.setEnabled(false);
 	}
 }
