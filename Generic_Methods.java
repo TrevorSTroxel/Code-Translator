@@ -91,14 +91,6 @@ public class Generic_Methods
 		}
     }
 
-	public static void Remove_Button_Enabler(int i)
-	{
-		if (i == 0)
-			Variables.Remove.setEnabled(false);
-		else if (i == 1)
-			Variables.Remove.setEnabled(true);
-	}
-
 	/**
 	 * This method will be used for cleaning out the JTextAreas
 	 * Everytime that they are called apon to be used again they will be cleaned out here
