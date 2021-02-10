@@ -68,11 +68,11 @@ public class Generic_Methods
 			Variables.Order_Of_Commands.add("say");
 			Variables.Storage.add(". Adding content to add to a method.");
 		}
-
+		//puts things from the ArrayList into the JTextArea for the user to see
 		for (int j = 0; j < Variables.Storage.size(); j++)
 		{
 			String indexNumber = Variables.Storage.get(j); //grabs what the string is so that i can find out its number later
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + (Variables.Storage.indexOf(indexNumber) + 1) + Variables.Storage.get(j) + "\n");
+			Variables.Queue_Content.append((Variables.Storage.indexOf(indexNumber) + 1) + Variables.Storage.get(j) + "\n");
 		}
 	}
 
@@ -86,8 +86,7 @@ public class Generic_Methods
             Variables.Order_Of_Commands.poll();//removes the top most element from the queue
             Variables.Storage.remove(0); //removes the first element in the ArrayList
             //this should clear out the text so that it can be updated proporly
-            Variables.Queue_Content.selectAll();
-            Variables.Queue_Content.replaceSelection("");
+			Text_Cleaner(1); //cleans up the JTextArea to be useable again
             for (int j = 0; j < Variables.Storage.size(); j++)
             {
 				String indexNumber = Variables.Storage.get(j);
@@ -124,16 +123,23 @@ public class Generic_Methods
 	 * This method will be used for cleaning out the JTextAreas
 	 * Everytime that they are called apon to be used again they will be cleaned
 	 */
-	public static void Text_Cleaner()
-	{
-		Variables.Text_Area_Paramater1.selectAll();
-		Variables.Text_Area_Paramater1.replaceSelection("");
-		
-		Variables.Text_Area_Paramater2.selectAll();
-		Variables.Text_Area_Paramater2.replaceSelection("");
-		
-		Variables.Text_Area_Paramater3.selectAll();
-		Variables.Text_Area_Paramater3.replaceSelection("");
+	public static void Text_Cleaner(int i)
+	{	
+		switch(i)
+		{
+			case 1:
+				Variables.Queue_Content.selectAll();
+        		Variables.Queue_Content.replaceSelection("");
+			default:
+				Variables.Text_Area_Paramater1.selectAll();
+				Variables.Text_Area_Paramater1.replaceSelection("");
+				
+				Variables.Text_Area_Paramater2.selectAll();
+				Variables.Text_Area_Paramater2.replaceSelection("");
+				
+				Variables.Text_Area_Paramater3.selectAll();
+				Variables.Text_Area_Paramater3.replaceSelection("");
+		}
 	}
 
 	/**

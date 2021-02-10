@@ -108,7 +108,7 @@ public class First_Window extends JFrame implements ActionListener
 
         else if (e.getSource() == Variables.Remove)
         {
-            Generic_Methods.Text_Cleaner(); //this will be called every time we move onto a new command as we need clean fields every time
+            Generic_Methods.Text_Cleaner(0); //this will be called every time we move onto a new command as we need clean fields every time
             Generic_Methods.Queue_Check(); //at the moment not working correctly, but is supposed to stop the user from removing what is not there
 			Generic_Methods.Translation(); //called again to run the next command
         }  
