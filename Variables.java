@@ -40,10 +40,10 @@ public class Variables
     ////////////////////////////////////////////////////////////////////////
     // generic variables that we call on to re-use at anytime
     //File location button to grab the directory
-    public static JButton Path_Button = new JButton("Click this to select your folder");
+    public static JButton Path_Button = new JButton("");
     //This is for when we ask the user to name something, will make a method to change the text later
-    public static JButton Naming_Button1 = new JButton("Click this once you have entered a name 1");
-    public static JButton Naming_Button2 = new JButton("Click this once you have entered a name 2");
+    public static JButton Naming_Button1 = new JButton();
+    public static JButton Naming_Button2 = new JButton();
 
     //Where the users inputs for the different text fields will go
     public static JTextArea Text_Area_Paramater1 = new JTextArea(1,20), Text_Area_Paramater2 = new JTextArea(1,20), Text_Area_Paramater3 = new JTextArea(1,20);

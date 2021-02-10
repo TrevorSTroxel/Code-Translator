@@ -156,21 +156,33 @@ public class Generic_Methods
         JTF.setFont(new Font("Times New Roman", Font.BOLD, 18)); //best font choice
     }
 
-	public static void After_Click_Text(JButton JB)
+	public static void Text_Button(JButton JB, int i)
 	{
-		if (JB == Variables.Path_Button)
+		switch (i)
 		{
-			JB.setText("<html>You have chosen your directory.<br/>Move on to the next part</html>");
-		}
-		else 
-		{
-			JB.setText("<html>Name has been set.<br/>You may change it by typeing in something different and clicking again</html>");
+			case 0: //the user has finished the step
+			JB.setText("Done");
+			break;
+
+			case 1: //disabled buttons
+			JB.setText("Finish the previous step to move on");
+			break;
+
+			case 2: //path button
+			JB.setText("Select your destination");
+			break;
+
+			case 3: //only for when naming the file
+			JB.setText("What do you want to name your file?");
+			break;
+
+			case 4:
+			JB.setText("What is the return type of your method?");
+			break;
+
+			case 5:
+			JB.setText("What is the name of method are we adding this content to?");
+			break;
 		}
 	}
-
-	public static void Button_Text_Start(JButton JB)
-	{
-
-	}
-
 }
