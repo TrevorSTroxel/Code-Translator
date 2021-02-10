@@ -26,12 +26,15 @@ public class First_Window extends JFrame implements ActionListener
     {
         Variables.Translator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Variables.Translator.setSize(500, 500);
-        Variables.TR_Panel.setLayout(new GridLayout(3, 1));
+        Variables.TR_Panel.setLayout(new GridLayout(3, 1))
+        ;
         Variables.TR_Panel.add(Variables.TR_Text_Area);
         Variables.TR_Panel.add(Variables.TR_Enter);
-        Variables.TR_Panel.add(Variables.Help); //this will change from time to time, meaning that we will remove it sometimes and other times we will keep it  
+        Variables.TR_Panel.add(Variables.Help); 
+
         Variables.TR_Enter.addActionListener(this);
-        Variables.Help.addActionListener(this);        
+        Variables.Help.addActionListener(this);     
+           
         Variables.Translator.add(Variables.TR_Panel);
         Variables.Translator.setVisible(true);
     }
