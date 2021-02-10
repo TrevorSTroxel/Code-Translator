@@ -32,6 +32,7 @@ public class Button_Clicked implements ActionListener
 				Generic_Methods.Location(Variables.Text_Area_Paramater1, 2); //grabs the text in the folder path area
 				Variables.Paramater1 = Variables.Text_Area_Paramater1.getText(); //sets the generic paramater1 to hold the folder location
 			}
+			Variables.Naming_Button1.setEnabled(true);
 		}
 		else if (e.getSource() == Variables.Naming_Button1)
 		{
@@ -40,6 +41,10 @@ public class Button_Clicked implements ActionListener
 			{
 				Create.Create_File(Variables.Paramater1, Variables.Paramater2); //runs our file creation method using our paramaters
 				Variables.Remove.setEnabled(true);
+			}
+			else 
+			{ 
+				Variables.Naming_Button2.setEnabled(true);
 			}
 		}
 		else if (e.getSource() == Variables.Naming_Button2)
