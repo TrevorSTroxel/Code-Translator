@@ -22,12 +22,12 @@ public class Generic_Methods
 				Panel_Methods.Panel_Settings(Variables.Folder_Panel, 3);
 				Panel_Methods.Input_Window(Variables.Folder_Panel); //sets the second window panel to the correct one
 				break;
-			case "make":
+			case "method":
 				//This is for adding methods to files
 				Panel_Methods.Panel_Settings(Variables.Method_Panel, 4);
 				Panel_Methods.Input_Window(Variables.Method_Panel); //calles the method to get the second window
 				break;
-			case "say":
+			case "add":
 				//this is for add any for of content to a method found within a file
 				Panel_Methods.Panel_Settings(Variables.Content_Panel, 4);
 				Panel_Methods.Input_Window(Variables.Content_Panel); //calles the method to get the second window
@@ -45,25 +45,30 @@ public class Generic_Methods
 	public static void Input_Parsing(String User_Input)
 	{
 		//Creates a file
-		if (User_Input.contains("new file"))
+		if (User_Input.contains("new file") || User_Input.contains("new program"))
 		{
 			Variables.Order_Of_Commands.add("new file");
 			//adds a list to the JTextArea for the user to see so they know what is happening
 			Variables.Storage.add(". Creating a new file.");
 		}
 		//Adds a method
-		if (User_Input.contains("make")) //change later to be something easier to type in a normal sentence, but for now this is what we have
+		if (User_Input.contains("make") || User_Input.contains("create")) //change later to be something easier to type in a normal sentence, but for now this is what we have
 		{
-			Variables.Order_Of_Commands.add("make");
+			Variables.Order_Of_Commands.add("method");
 			Variables.Storage.add(". Adding a method the chosen file.");
 		}
 		//this is subject to change for what the user can say to trigger this, but this will be where the user asks where to put stuff
 		//Add more paramaters for what can trigger this in the near future
 		//Adds content to a file
-		if (User_Input.contains("say"))
+		if (User_Input.contains("times")) //loops
 		{
-			Variables.Order_Of_Commands.add("say");
-			Variables.Storage.add(". Adding content to add to a method.");
+			Variables.Order_Of_Commands.add("add");
+			Variables.Storage.add(". Adding content to add to a method. (Loops)");
+		}
+		if (User_Input.contains("say")) //make the system say things
+		{
+			Variables.Order_Of_Commands.add("add");
+			Variables.Storage.add(". Adding content to add to a method. (System says something)");
 		}
 		//puts things from the ArrayList into the JTextArea for the user to see
 		List_Of_Actions();

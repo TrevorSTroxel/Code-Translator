@@ -16,7 +16,10 @@ import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JScrollPane;
 
-public class First_Window extends JFrame implements ActionListener 
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
+public class First_Window extends JFrame implements ActionListener, WindowListener
 {
     Button_Clicked BC = new Button_Clicked(); //Only time we will need to make an Object, all other times are will be static
     private static final long serialVersionUID = 1L; //makes VSCode happy
@@ -58,6 +61,7 @@ public class First_Window extends JFrame implements ActionListener
         Variables.Path_Button.addActionListener(this);
         Variables.Naming_Button1.addActionListener(this);
         Variables.Naming_Button2.addActionListener(this);
+        Variables.Input_Window.addWindowListener(this);
         //////////////////////////////////////////////////////
     }
 
@@ -124,4 +128,26 @@ public class First_Window extends JFrame implements ActionListener
             BC.actionPerformed(e); //this is used so that all other button presses that are used are transfered to the other file to be interperted
         }
     }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        Variables.Order_Of_Commands.clear();
+        Variables.Storage.clear();
+        Variables.Queue_Content.selectAll();
+        Variables.Queue_Content.replaceSelection("");
+    }
+
+    //dont matter
+    @Override
+    public void windowOpened(WindowEvent e) {}
+    @Override
+    public void windowClosing(WindowEvent e) {}
+    @Override
+    public void windowIconified(WindowEvent e) {}
+    @Override
+    public void windowDeiconified(WindowEvent e) {}
+    @Override
+    public void windowActivated(WindowEvent e) {}
+    @Override
+    public void windowDeactivated(WindowEvent e) {}
 }
