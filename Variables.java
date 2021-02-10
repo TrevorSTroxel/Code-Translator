@@ -1,3 +1,4 @@
+
 /**
  * @author Trevor Troxel & Abed Abualkheir
  * @version 3.0
@@ -6,6 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -51,6 +53,10 @@ public class Variables
     public static String Paramater1 = new String();
     public static String Paramater2 = new String();
     public static String Paramater3 = new String();
+
+    //This JLabel will be used to display to the user what the order of operations is
+    //This helps them keep track of what is happening, and it helps us programmers keep track of everything happening
+    public static JLabel Queue_Content = new JLabel();
     ////////////////////////////////////////////////////////////////////////
     //this section is where we will have the different panels
     //may think about making a method where it also 
