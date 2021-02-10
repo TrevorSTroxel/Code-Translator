@@ -14,18 +14,22 @@ public class Generic_Methods
     {
         if (Variables.Order_Of_Commands.peek().equals("new file"))
         {
-            Panel_Methods.File_Creation_Panel(); //used to run the file creation panel settings
-            Panel_Methods.Input_Window("Folder Panel"); //sets the second window panel to the correct one
+			//This will be for File creation
+			Panel_Methods.Panel_Settings(Variables.Folder_Panel, 3);
+            Panel_Methods.Input_Window(Variables.Folder_Panel); //sets the second window panel to the correct one
         }
+		//testing to see if a JPanel can be used as a paramater in take
 		else if (Variables.Order_Of_Commands.peek().equals("make"))
         {
-			Panel_Methods.Method_Adding_Panel(); //content adding panel settings
-			Panel_Methods.Input_Window("Method creation"); //calles the method to get the second window
+			//This is for adding methods to files
+			Panel_Methods.Panel_Settings(Variables.Method_Panel, 4);
+			Panel_Methods.Input_Window(Variables.Method_Panel); //calles the method to get the second window
         }
         else if (Variables.Order_Of_Commands.peek().equals("say"))
         {
-			Panel_Methods.Add_Content_Panel(); //content adding panel settings
-			Panel_Methods.Input_Window("Add to file"); //calles the method to get the second window
+			//this is for add any for of content to a method found within a file
+			Panel_Methods.Panel_Settings(Variables.Content_Panel, 4);
+			Panel_Methods.Input_Window(Variables.Content_Panel); //calles the method to get the second window
         }
     }
 
@@ -59,13 +63,6 @@ public class Generic_Methods
 		}
 	}
 
-	//Used for setting the names of the panels for later for arguments
-	public static void Panel_Name_Setter() 
-	{
-		Variables.Folder_Panel.setName("Folder Panel");
-		Variables.Method_Panel.setName("Method creation");
-		Variables.Content_Panel.setName("Add to file");
-	}
 
 	//this allows the users to click a button and set either the folder location or the file location
 	public static void Location(JTextArea JTA, int i) 
@@ -97,6 +94,23 @@ public class Generic_Methods
 			Variables.Remove.setEnabled(false);
 		else if (i == 1)
 			Variables.Remove.setEnabled(true);
+	}
+
+	/**
+	 * This method will be used for cleaning out the JTextAreas
+	 * Everytime that they are called apon to be used again they will be cleaned out here
+	 * 
+	 */
+	public static void Text_Cleaner()
+	{
+		Variables.Text_Area_Paramater1.selectAll();
+		Variables.Text_Area_Paramater1.replaceSelection("");
+		
+		Variables.Text_Area_Paramater2.selectAll();
+		Variables.Text_Area_Paramater2.replaceSelection("");
+		
+		Variables.Text_Area_Paramater3.selectAll();
+		Variables.Text_Area_Paramater3.replaceSelection("");
 	}
 
 }
