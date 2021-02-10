@@ -85,5 +85,6 @@ public class Panel_Methods
 		JP.add(Variables.Remove);
 		Variables.Remove.setEnabled(false);
 		JP.add(Variables.Queue_Content);
+		Variables.Queue_Content.setEnabled(false);
 	}
 }
