@@ -55,21 +55,23 @@ public class Generic_Methods
 		{
 			i++;
 			Variables.Order_Of_Commands.add("new file");
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + i + ". Creating a new file"); //what this does is make a list from the commands the user wants
+			//The reason we set it up like this is to add to the current list, not change what it is doing
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + "\n" + i + ". Creating a new file."); //what this does is make a list from the commands the user wants
 		}
 		//if the user wants to make a method
-		if (User_Input.contains("make")) //may want to change later to be something easier to type in a nromal sentence, but for now this is what we have
+		if (User_Input.contains("make")) //change later to be something easier to type in a normal sentence, but for now this is what we have
 		{
 			i++;
 			Variables.Order_Of_Commands.add("make");
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + i + ". Adding a method the chosen file");
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + "\n" + i + ". Adding a method the chosen file.");
 		}
 		//this is subject to change for what the user can say to trigger this, but this will be where the user asks where to put stuff
+		//Add more paramaters for what can trigger this in the near future
 		if (User_Input.contains("say"))
 		{
 			i++;
 			Variables.Order_Of_Commands.add("say");
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + i + ". Adding content to add to a method");
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + "\n" + i + ". Adding content to add to a method.");
 		}
 	}
 
