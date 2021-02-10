@@ -43,6 +43,9 @@ public class Generic_Methods
 	 * We also have to make sure that when we add things to this queue, they go in a logical order
 	 * we can think about the logic of how commands should be interperted at a later point, but for now
 	 * we are just trying to get our program worrking correctly
+	 * 
+	 * We also want to add a JLabel to go along with the queue
+	 * The JLabel will display what the current list of commands are in there so that the user knows what is happening
 	 */
 	public static void Input_Parsing(String User_Input)
 	{

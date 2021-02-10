@@ -164,6 +164,9 @@ public class Create
 	 * @param Method_Name
 	 * @param File_dir
 	 * @param Contents_To_Add
+	 * 
+	 * Since this is a new program, we will want to first call a method with the paramater of Contents_To_Add and from there look at what the user wants to do
+	 * basically its like a translator within a translator, but for now this works
 	 */
 	public static void Add_To_Method(String File_Dir, String Method_Name, String Contents_To_Add) 
 	{
@@ -180,6 +183,7 @@ public class Create
 					{
 						if (fileContents.get(j).equals("")) 
 						{
+							//this is where we would call the mini-translator method, so the content that we add is what the user wants
 							fileContents.set(j, "\t\t" + Contents_To_Add + "\n");
 							break;
 						}

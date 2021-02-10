@@ -19,7 +19,8 @@ public class First_Window extends JFrame implements ActionListener
     
     /**
      * Used to set up the first window the user sees
-     * May change or work on later to lok better, have a better layout than current one
+     * May change or work on later to look better, have a better layout than current one
+     * Look into possible cleanup of this method later
      */
     public void New_Window() 
     {
@@ -54,13 +55,14 @@ public class First_Window extends JFrame implements ActionListener
     }
 
     //made this method so that the program does not try to run commands when the queue is empty
+    //change later so that once the commande runs out, it closes the program
     public void Queue_Check()
     {
-        if (!Variables.Order_Of_Commands.isEmpty())
+        if (!Variables.Order_Of_Commands.isEmpty() == true)
         {
             Variables.Order_Of_Commands.poll();//removes the top most element from the queue
         }
-        else if (Variables.Order_Of_Commands.isEmpty())
+        else if (Variables.Order_Of_Commands.isEmpty() == true)
         {
             System.out.println("The commands are all done");
         }
