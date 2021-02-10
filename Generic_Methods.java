@@ -79,6 +79,25 @@ public class Generic_Methods
 		}
 	}
 
+	//made this method so that the program does not try to run commands when the queue is empty
+    //change later so that once the commande runs out, it closes the program
+    public static void Queue_Check()
+    {
+        if (!Variables.Order_Of_Commands.isEmpty() == true)
+        {
+            //now this will update the list for the user so that they know what is happening in real time
+            Variables.Order_Of_Commands.poll();//removes the top most element from the queue
+            Variables.Storage.remove(0); //removes the first element in the ArrayList
+            //this should clear out the text so that it can be updated proporly
+            Variables.Queue_Content.selectAll();
+            Variables.Queue_Content.replaceSelection("");
+            for (int j = 0; j < Variables.Storage.size(); j++)
+            {
+                Variables.Queue_Content.append(Variables.Storage.get(j) + "\n");
+    		}
+        }
+    }
+
 	//Allows the user to select a location
 	public static void Location(JTextArea JTA, int i) 
 	{

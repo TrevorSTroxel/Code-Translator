@@ -61,28 +61,6 @@ public class First_Window extends JFrame implements ActionListener
         //////////////////////////////////////////////////////
     }
 
-    //made this method so that the program does not try to run commands when the queue is empty
-    //change later so that once the commande runs out, it closes the program
-    public void Queue_Check()
-    {
-        if (!Variables.Order_Of_Commands.isEmpty() == true)
-        {
-            //now this will update the list for the user so that they know what is happening in real time
-            Variables.Order_Of_Commands.poll();//removes the top most element from the queue
-            Variables.Storage.remove(0); //removes the first element in the ArrayList
-            //this should clear out the text so that it can be updated proporly
-            Variables.Queue_Content.selectAll();
-            Variables.Queue_Content.replaceSelection("");
-            for (int j = 0; j < Variables.Storage.size(); j++)
-            {
-                Variables.Queue_Content.append(Variables.Storage.get(j) + "\n");
-    		}
-        }
-        else if (Variables.Order_Of_Commands.isEmpty() == true)
-        {
-            System.out.println("The commands are all done");
-        }
-    }
 
     /**
      * This code was imported from our other project
@@ -132,7 +110,7 @@ public class First_Window extends JFrame implements ActionListener
         else if (e.getSource() == Variables.Remove)
         {
             Generic_Methods.Text_Cleaner(); //this will be called every time we move onto a new command as we need clean fields every time
-            Queue_Check(); //at the moment not working correctly, but is supposed to stop the user from removing what is not there
+            Generic_Methods.Queue_Check(); //at the moment not working correctly, but is supposed to stop the user from removing what is not there
 			Generic_Methods.Translation(); //called again to run the next command
         }  
 
