@@ -66,11 +66,7 @@ public class Generic_Methods
 			Variables.Storage.add(". Adding content to add to a method.");
 		}
 		//puts things from the ArrayList into the JTextArea for the user to see
-		for (int j = 0; j < Variables.Storage.size(); j++)
-		{
-			String indexNumber = Variables.Storage.get(j); //grabs what the string is so that i can find out its number later
-			Variables.Queue_Content.append((Variables.Storage.indexOf(indexNumber) + 1) + Variables.Storage.get(j) + "\n");
-		}
+		List_Of_Actions();
 	}
 
 	//made this method so that the program does not try to run commands when the queue is empty
@@ -84,13 +80,18 @@ public class Generic_Methods
             Variables.Storage.remove(0); //removes the first element in the ArrayList
             //this should clear out the text so that it can be updated proporly
 			Text_Cleaner(1); //cleans up the JTextArea to be useable again
-            for (int j = 0; j < Variables.Storage.size(); j++)
-            {
-				String indexNumber = Variables.Storage.get(j);
-				Variables.Queue_Content.append((Variables.Storage.indexOf(indexNumber) + 1) + Variables.Storage.get(j) + "\n");
-    		}
+			List_Of_Actions();
         }
     }
+
+	public static void List_Of_Actions()
+	{
+		for (int j = 0; j < Variables.Storage.size(); j++)
+		{
+			String indexNumber = Variables.Storage.get(j);
+			Variables.Queue_Content.append((Variables.Storage.indexOf(indexNumber) + 1) + Variables.Storage.get(j) + "\n");
+		}
+	}
 
 	//Allows the user to select a location
 	public static void Location(JTextArea JTA, int i) 
@@ -150,8 +151,7 @@ public class Generic_Methods
         JTF.setFont(new Font("Times New Roman", Font.BOLD, 18)); //best font choice
     }
 
-	//come back to this later, add another paramater so that the program can know what to set the text to in particular
-	public static void Button_Text_Change(JButton JB)
+	public static void After_Click_Text(JButton JB)
 	{
 		if (JB == Variables.Path_Button)
 		{
@@ -161,6 +161,11 @@ public class Generic_Methods
 		{
 			JB.setText("<html>Name has been set.<br/>You may change it by typeing in something different and clicking again</html>");
 		}
+	}
+
+	public static void Button_Text_Start(JButton JB)
+	{
+
 	}
 
 }

@@ -34,7 +34,7 @@ public class Button_Clicked implements ActionListener
 				Generic_Methods.Location(Variables.Text_Area_Paramater1, 2); //grabs the text in the folder path area
 				Variables.Paramater1 = Variables.Text_Area_Paramater1.getText(); //sets the generic paramater1 to hold the folder location
 			}
-			Generic_Methods.Button_Text_Change(Variables.Path_Button);
+			Generic_Methods.After_Click_Text(Variables.Path_Button);
 			Variables.Naming_Button1.setEnabled(true); //enables the next button for the user
 		}
 		else if (e.getSource() == Variables.Naming_Button1)
@@ -51,7 +51,7 @@ public class Button_Clicked implements ActionListener
 			{ 
 				Variables.Naming_Button2.setEnabled(true);
 			}
-			Generic_Methods.Button_Text_Change(Variables.Naming_Button1);
+			Generic_Methods.After_Click_Text(Variables.Naming_Button1);
 		}
 		else if (e.getSource() == Variables.Naming_Button2)
 		{
@@ -66,7 +66,7 @@ public class Button_Clicked implements ActionListener
 			{
 				Create.Add_To_Method(Variables.Paramater1, Variables.Paramater2, Variables.Paramater3);
 			}
-			Generic_Methods.Button_Text_Change(Variables.Naming_Button1);
+			Generic_Methods.After_Click_Text(Variables.Naming_Button2);
 			Variables.Remove.setEnabled(true);
 		}
 	}
