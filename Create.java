@@ -180,7 +180,7 @@ public class Create
 					{
 						if (fileContents.get(j).equals("")) 
 						{
-							fileContents.set(j, Contents_To_Add + "\n");
+							fileContents.set(j, "\t\t" + Contents_To_Add + "\n");
 							break;
 						}
 					}
