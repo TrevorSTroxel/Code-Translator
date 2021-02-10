@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -56,7 +55,7 @@ public class Variables
 
     //This JLabel will be used to display to the user what the order of operations is
     //This helps them keep track of what is happening, and it helps us programmers keep track of everything happening
-    public static JLabel Queue_Content = new JLabel();
+    public static JTextArea Queue_Content = new JTextArea();
     ////////////////////////////////////////////////////////////////////////
     //this section is where we will have the different panels
     //may think about making a method where it also 
