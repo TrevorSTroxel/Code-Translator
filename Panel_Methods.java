@@ -1,8 +1,11 @@
+
 /**
  * @author Trevor Troxel & Abed Abualkheir
  * @version 2.0
  */
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 import java.awt.GridLayout;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -12,32 +15,19 @@ import javax.swing.JScrollPane;
 public class Panel_Methods 
 {
 	/**
-	 * this is where all the panels we create will be set up in
-	 * Input_Window method is used to add the correct panel to the program
+	 * This takes a JPanel input so the window 
+	 * can add the correct JPanel depending on what current action is taking place
+	 * @param JP
 	 */
-    public static void Input_Window(String JP) // we have to grab the name of the panel input to set it correctly
+    public static void Input_Window(JPanel JP)
 	{
 		Variables.Input_Window.getContentPane().removeAll();// This is to make sure that the window is reuseable every time
-		Variables.Input_Window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		Variables.Input_Window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //the new window only closes that window and not others
 		Variables.Input_Window.setSize(500, 500);
-
-        //We need this to set the correct panels to the correct statements
-        //look into switch statements later
-		if (JP == Variables.Folder_Panel.getName()) 
-		{
-			Variables.Input_Window.add(Variables.Folder_Panel);
-		} 
-        else if (JP == Variables.Content_Panel.getName()) 
-		{
-			Variables.Input_Window.add(Variables.Content_Panel);
-		}
-		else if (JP == Variables.Method_Panel.getName()) 
-		{
-			Variables.Input_Window.add(Variables.Method_Panel);
-		}
-
+		
+		Variables.Input_Window.add(JP); //adds the correct JPanel depending on what the user wants
+		
 		Variables.Input_Window.setVisible(true);
-        //the bottom two commands make it so the window refreshes itself so that the use does not have to move it
 		Variables.Input_Window.getContentPane().validate();
 		Variables.Input_Window.repaint();
 	}
@@ -65,66 +55,30 @@ public class Panel_Methods
 	}
 
 	/**
-	 * This is the Panel settings for File Creation
-	 * this called when "new file" is typed
-	 * the action listers for the buttons were moved because they can not be called statically
+	 * This solves a lot of our problems we had before
+	 * Since we set everything to static, we can have a proper JPanel paramater.
+	 * Depending on how may buttons we need the panel to have, the 'i' variable will determine
+	 * how many buttons we need to add
+	 * @param JP
+	 * @param i
 	 */
-	public static void File_Creation_Panel() 
+	public static void Panel_Settings(JPanel JP, int i)
 	{
-		Variables.Folder_Panel.setLayout(new GridLayout(3, 2));
+		JP.setLayout(new GridLayout(i, 2));
 
-		Variables.Folder_Panel.add(Variables.Folder_Path_Button);
-		Variables.Folder_Panel.add(Variables.Folder_Path_Text_Area);
+		JP.add(Variables.Path_Button);
+		JP.add(Variables.Text_Area_Paramater1);
 
-		Variables.Folder_Panel.add(Variables.File_Name_Button);
-		Variables.Folder_Panel.add(Variables.File_Name_Text_Area);
+		JP.add(Variables.Naming_Button1);
+		JP.add(Variables.Text_Area_Paramater2);
 
-		Variables.Folder_Panel.add(Variables.Remove);  //this variable will always be added last
-		Generic_Methods.Remove_Button_Enabler(0); //look at method for discription
-	}
+		if (i == 4)
+		{
+			JP.add(Variables.Naming_Button2);
+			JP.add(Variables.Text_Area_Paramater3);
+		}
 
-	/**
-	 * This method will add a method to any given java file that is selected
-	 * purpose of this method is help ease new people into the language by doing it for them
-	 * so they can learn how to do it on there own
-	 */
-	public static void Method_Adding_Panel()
-	{
-		Variables.Method_Panel.setLayout(new GridLayout(4, 2));
-		
-		Variables.Method_Panel.add(Variables.File_Button);
-		Variables.Method_Panel.add(Variables.File_Text_Area);
-
-		Variables.Method_Panel.add(Variables.Return_Type_Button);
-		Variables.Method_Panel.add(Variables.Return_Type_Text_Area);
-
-		Variables.Method_Panel.add(Variables.Method_Name_Button);
-		Variables.Method_Panel.add(Variables.Method_Name_Text_Area);
-
-		Variables.Method_Panel.add(Variables.Remove);
-		Generic_Methods.Remove_Button_Enabler(0);
-	}
-
-	/**
-	 * Panel settings for adding content
-	 * will fiddle around with this as this could save us a lot of space and codeing later on
-	 * what I mean is that we can call this panel multiple times and depending on what input (method paramater)
-	 * we give it, this can be called multiple times
-	 */
-	public static void Add_Content_Panel()
-	{
-		Variables.Content_Panel.setLayout(new GridLayout(4, 2));
-
-		Variables.Content_Panel.add(Variables.File_Path_Button);
-		Variables.Content_Panel.add(Variables.File_Path_Text_Area);
-
-		Variables.Content_Panel.add(Variables.Getting_Method_Name_Button);
-		Variables.Content_Panel.add(Variables.Getting_Method_Name_Text_Area);
-
-		Variables.Content_Panel.add(Variables.File_Add_Content_Button);
-		Variables.Content_Panel.add(Variables.File_Add_Content_Text_Area);
-
-		Variables.Content_Panel.add(Variables.Remove);
+		JP.add(Variables.Remove);
 		Generic_Methods.Remove_Button_Enabler(0);
 	}
 }
