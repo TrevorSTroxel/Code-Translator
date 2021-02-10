@@ -29,18 +29,18 @@ public class Button_Clicked implements ActionListener
 				Variables.Paramater1 = Variables.Text_Area_Paramater1.getText(); //sets the generic paramater1 to hold the folder location
 				Generic_Methods.Text_Button(Variables.Naming_Button1, 3);
 			}
-			//allows the user to select a file
-			else if (Variables.Method_Panel.isDisplayable() == true)
+			else
 			{
 				Generic_Methods.Location(Variables.Text_Area_Paramater1, 2);
 				Variables.Paramater1 = Variables.Text_Area_Paramater1.getText();
-				Generic_Methods.Text_Button(Variables.Naming_Button1, 4);
-			}
-			else if (Variables.Content_Panel.isDisplayable() == true)
-			{
-				Generic_Methods.Location(Variables.Text_Area_Paramater1, 2);
-				Variables.Paramater1 = Variables.Text_Area_Paramater1.getText();
-				Generic_Methods.Text_Button(Variables.Naming_Button1, 5);
+				if (Variables.Method_Panel.isDisplayable() == true)
+				{
+					Generic_Methods.Text_Button(Variables.Naming_Button1, 4);
+				}
+				else if (Variables.Content_Panel.isDisplayable() == true)
+				{
+					Generic_Methods.Text_Button(Variables.Naming_Button1, 5);
+				}
 			}
 			Generic_Methods.Text_Button(Variables.Path_Button, 0);
 			Variables.Naming_Button1.setEnabled(true); //enables the next button for the user
@@ -58,6 +58,14 @@ public class Button_Clicked implements ActionListener
 			else 
 			{ 
 				Variables.Naming_Button2.setEnabled(true);
+				if (Variables.Method_Panel.isDisplayable() == true)
+				{
+					Generic_Methods.Text_Button(Variables.Naming_Button2, 6);
+				}
+				else if (Variables.Content_Panel.isDisplayable() == true)
+				{
+					Generic_Methods.Text_Button(Variables.Naming_Button2, 7);
+				}
 			}
 			Generic_Methods.Text_Button(Variables.Naming_Button1,0);
 		}
@@ -74,7 +82,7 @@ public class Button_Clicked implements ActionListener
 			{
 				Create.Add_To_Method(Variables.Paramater1, Variables.Paramater2, Variables.Paramater3);
 			}
-			Generic_Methods.Text_Button(Variables.Naming_Button2,1);
+			Generic_Methods.Text_Button(Variables.Naming_Button2,0);
 			Variables.Remove.setEnabled(true);
 		}
 	}

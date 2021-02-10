@@ -172,16 +172,27 @@ public class Generic_Methods
 			JB.setText("Select your destination");
 			break;
 
+			//naming button 1 cases
 			case 3: //only for when naming the file
 			JB.setText("What do you want to name your file?");
 			break;
 
-			case 4:
+			case 4: // naming button 1 text for methods
 			JB.setText("What is the return type of your method?");
 			break;
 
-			case 5:
+			case 5:	
 			JB.setText("What is the name of method are we adding this content to?");
+			break;
+			
+			
+			//naming button 2 cases
+			case 6:
+			JB.setText("What do you want to name this method?");
+			break;
+
+			case 7:
+			JB.setText("What do you want to add to this method?");
 			break;
 		}
 	}
