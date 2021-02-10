@@ -99,6 +99,7 @@ public class First_Window extends JFrame implements ActionListener
     {
         Variables.User_Input = Variables.TR_Text_Area.getText();
         Variables.User_Input.toLowerCase(); // for easier coding
+
         if (e.getSource() == Variables.TR_Enter) 
         {
             ActionSetter(); //this will set all the action listers for all the panels to use

@@ -82,27 +82,27 @@ public class Create
 		try 
 		{
 			List<String> fileContents = new ArrayList<>(Files.readAllLines(Paths.get(file_path), StandardCharsets.UTF_8));
-			if (NameHolder.equals("main")) 
-			{ 
-			//if they want to make a main function, this adds the functionality to run the program
-			//We formatted it like this so we can get a better picture of what things will look like in the file
-			fileContents.add("public class " + NameHolder +
-			"\n{\n" +
-				"\tpublic void main(String[] args)" +
-				"\n\t{\n"+
-				"\n\t}\n"+
-			"\n}");
-			Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
-			}
-			else 
-			{ 
+			switch (NameHolder)
+			{
+				case "main":
+				//if they want to make a main function, this adds the functionality to run the program
+				//We formatted it like this so we can get a better picture of what things will look like in the file
+				fileContents.add("public class " + NameHolder +
+				"\n{\n" +
+					"\tpublic void main(String[] args)" +
+					"\n\t{\n"+
+					"\n\t}\n"+
+				"\n}");
+				Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
+				break;
+				default:
 				//this is for every other file name
 				fileContents.add("public class " + NameHolder +
 				"\n{\n" +
 				"\n}");
 				Files.write(Paths.get(file_path), fileContents, StandardCharsets.UTF_8);
+				break;
 			}
-
 		} 
 		catch (IOException e) 
 		{

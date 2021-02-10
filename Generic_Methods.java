@@ -130,6 +130,7 @@ public class Generic_Methods
 			case 1:
 				Variables.Queue_Content.selectAll();
         		Variables.Queue_Content.replaceSelection("");
+				break;
 			default:
 				Variables.Text_Area_Paramater1.selectAll();
 				Variables.Text_Area_Paramater1.replaceSelection("");
@@ -139,6 +140,7 @@ public class Generic_Methods
 				
 				Variables.Text_Area_Paramater3.selectAll();
 				Variables.Text_Area_Paramater3.replaceSelection("");
+				break;
 		}
 	}
 
