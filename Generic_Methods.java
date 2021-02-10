@@ -44,38 +44,35 @@ public class Generic_Methods
 	 */
 	public static void Input_Parsing(String User_Input)
 	{
-		int i = 0; //this will be used to make a list to the JLabel, making it easier for users to understand
 		//possibly think about making an array list and then putting all that content inside a jtextarea
 		//that way when one command is done, it removes it from the list and will update that for the user
 
 		//Creates a file
 		if (User_Input.contains("new file"))
 		{
-			i++;
 			Variables.Order_Of_Commands.add("new file");
 			//adds a list to the JTextArea for the user to see so they know what is happening
-			Variables.Storage.add(i + ". Creating a new file.");
+			Variables.Storage.add(". Creating a new file.");
 		}
 		//Adds a method
 		if (User_Input.contains("make")) //change later to be something easier to type in a normal sentence, but for now this is what we have
 		{
-			i++;
 			Variables.Order_Of_Commands.add("make");
-			Variables.Storage.add(i + ". Adding a method the chosen file.");
+			Variables.Storage.add(". Adding a method the chosen file.");
 		}
 		//this is subject to change for what the user can say to trigger this, but this will be where the user asks where to put stuff
 		//Add more paramaters for what can trigger this in the near future
 		//Adds content to a file
 		if (User_Input.contains("say"))
 		{
-			i++;
 			Variables.Order_Of_Commands.add("say");
-			Variables.Storage.add(i + ". Adding content to add to a method.");
+			Variables.Storage.add(". Adding content to add to a method.");
 		}
 
 		for (int j = 0; j < Variables.Storage.size(); j++)
 		{
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + Variables.Storage.get(j) + "\n");
+			String indexNumber = Variables.Storage.get(j); //grabs what the string is so that i can find out its number later
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + (Variables.Storage.indexOf(indexNumber) + 1) + Variables.Storage.get(j) + "\n");
 		}
 	}
 
@@ -93,7 +90,8 @@ public class Generic_Methods
             Variables.Queue_Content.replaceSelection("");
             for (int j = 0; j < Variables.Storage.size(); j++)
             {
-                Variables.Queue_Content.append(Variables.Storage.get(j) + "\n");
+				String indexNumber = Variables.Storage.get(j);
+				Variables.Queue_Content.append((Variables.Storage.indexOf(indexNumber) + 1) + Variables.Storage.get(j) + "\n");
     		}
         }
     }

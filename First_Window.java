@@ -61,7 +61,6 @@ public class First_Window extends JFrame implements ActionListener
         //////////////////////////////////////////////////////
     }
 
-
     /**
      * This code was imported from our other project
      * we decided that since it was already there and still useable, why not just use it again
