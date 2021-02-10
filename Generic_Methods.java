@@ -1,7 +1,9 @@
+
 /**
  * @author Trevor Troxel & Abed Abualkheir
  * @version 3.0
  */
+import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileSystemView;
@@ -19,14 +21,13 @@ public class Generic_Methods
 			Panel_Methods.Panel_Settings(Variables.Folder_Panel, 3);
             Panel_Methods.Input_Window(Variables.Folder_Panel); //sets the second window panel to the correct one
         }
-		//testing to see if a JPanel can be used as a paramater in take
-		else if (Variables.Order_Of_Commands.peek().equals("make"))
+		else if (Variables.Order_Of_Commands.peek().equals("make")) //add more paramaters
         {
 			//This is for adding methods to files
 			Panel_Methods.Panel_Settings(Variables.Method_Panel, 4);
 			Panel_Methods.Input_Window(Variables.Method_Panel); //calles the method to get the second window
         }
-        else if (Variables.Order_Of_Commands.peek().equals("say"))
+        else if (Variables.Order_Of_Commands.peek().equals("say")) //add mkore paramaters
         {
 			//this is for add any for of content to a method found within a file
 			Panel_Methods.Panel_Settings(Variables.Content_Panel, 4);
@@ -40,43 +41,45 @@ public class Generic_Methods
 	 * and then run the commands in the proer order they must go in.
 	 * More commands will be add later that can be interperted and added to the queue
 	 * @param User_Input
-	 * 
-	 * We also have to make sure that when we add things to this queue, they go in a logical order
-	 * we can think about the logic of how commands should be interperted at a later point, but for now
-	 * we are just trying to get our program worrking correctly
-	 * 
-	 * We also want to add a JLabel to go along with the queue
-	 * The JLabel will display what the current list of commands are in there so that the user knows what is happening
 	 */
 	public static void Input_Parsing(String User_Input)
 	{
 		int i = 0; //this will be used to make a list to the JLabel, making it easier for users to understand
-		//if the user wants to make a new file
+		//possibly think about making an array list and then putting all that content inside a jtextarea
+		//that way when one command is done, it removes it from the list and will update that for the user
+
+		//Creates a file
 		if (User_Input.contains("new file"))
 		{
 			i++;
 			Variables.Order_Of_Commands.add("new file");
-			//The reason we set it up like this is to add to the current list, not change what it is doing
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + "\n" + i + ". Creating a new file."); //what this does is make a list from the commands the user wants
+			//adds a list to the JTextArea for the user to see so they know what is happening
+			Variables.Storage.add(i + ". Creating a new file.");
 		}
-		//if the user wants to make a method
+		//Adds a method
 		if (User_Input.contains("make")) //change later to be something easier to type in a normal sentence, but for now this is what we have
 		{
 			i++;
 			Variables.Order_Of_Commands.add("make");
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + "\n" + i + ". Adding a method the chosen file.");
+			Variables.Storage.add(i + ". Adding a method the chosen file.");
 		}
 		//this is subject to change for what the user can say to trigger this, but this will be where the user asks where to put stuff
 		//Add more paramaters for what can trigger this in the near future
+		//Adds content to a file
 		if (User_Input.contains("say"))
 		{
 			i++;
 			Variables.Order_Of_Commands.add("say");
-			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + "\n" + i + ". Adding content to add to a method.");
+			Variables.Storage.add(i + ". Adding content to add to a method.");
+		}
+
+		for (int j = 0; j < Variables.Storage.size(); j++)
+		{
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + Variables.Storage.get(j) + "\n");
 		}
 	}
 
-	//this allows the users to click a button and set either the folder location or the file location
+	//Allows the user to select a location
 	public static void Location(JTextArea JTA, int i) 
 	{
 		if (i == 1) //this is used for if the user must select a folder
@@ -117,15 +120,26 @@ public class Generic_Methods
 	}
 
 	/**
-	 * Imported from old code.
-	 * Just helps clean up the text box areas to look nicer.
-	 * Plus its easy to change, add or remove things from here
-     * @param JTF
-     */
+	 * All the methods/code below are imported from our old project.
+	 * Lazy, but effective
+	 */
     public static void Text_Box_Format_Method(JTextArea JTF) 
 	{
         JTF.setLineWrap(true); //wraps any text around to fit inside the box
-        JTF.setFont(new Font("Times New Roman", Font.BOLD, 18));
+        JTF.setFont(new Font("Times New Roman", Font.BOLD, 18)); //best font choice
     }
+
+	//come back to this later, add another paramater so that the program can know what to set the text to in particular
+	public static void Button_Text_Change(JButton JB)
+	{
+		if (JB == Variables.Path_Button)
+		{
+			JB.setText("<html>You have chosen your directory.<br/>Move on to the next part</html>");
+		}
+		else 
+		{
+			JB.setText("<html>Name has been set.<br/>You may change it by typeing in something different and clicking again</html>");
+		}
+	}
 
 }

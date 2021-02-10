@@ -67,7 +67,16 @@ public class First_Window extends JFrame implements ActionListener
     {
         if (!Variables.Order_Of_Commands.isEmpty() == true)
         {
+            //now this will update the list for the user so that they know what is happening in real time
             Variables.Order_Of_Commands.poll();//removes the top most element from the queue
+            Variables.Storage.remove(0); //removes the first element in the ArrayList
+            //this should clear out the text so that it can be updated proporly
+            Variables.Queue_Content.selectAll();
+            Variables.Queue_Content.replaceSelection("");
+            for (int j = 0; j < Variables.Storage.size(); j++)
+            {
+                Variables.Queue_Content.append(Variables.Storage.get(j) + "\n");
+    		}
         }
         else if (Variables.Order_Of_Commands.isEmpty() == true)
         {

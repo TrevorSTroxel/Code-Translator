@@ -22,7 +22,7 @@ public class Panel_Methods
 		Variables.Input_Window.setSize(700, 700);
 		
 		Variables.Input_Window.add(JP); //adds the correct JPanel depending on what the user wants
-		Variables.Input_Window.setLocationRelativeTo(null);
+		Variables.Input_Window.setLocationRelativeTo(null); //sets the panel in the middle of the users screen
 		
 		Variables.Input_Window.setVisible(true);
 		Variables.Input_Window.getContentPane().validate();
@@ -39,7 +39,7 @@ public class Panel_Methods
 	 */
 	public static void Panel_Settings(JPanel JP, int i)
 	{
-		JP.setLayout(new GridLayout(i, 2));
+		JP.setLayout(new GridLayout(i, 2)); //how may rows we need for our buttons, we will only ever have 2 coloums for ease of understanding
 
 		JP.add(Variables.Path_Button);
 		JP.add(Variables.Text_Area_Paramater1);
@@ -62,6 +62,7 @@ public class Panel_Methods
 
 		JP.add(Variables.Remove);
 		Variables.Remove.setEnabled(false);
+		
 		JP.add(Variables.Queue_Content);
 		Generic_Methods.Text_Box_Format_Method(Variables.Queue_Content);
 		Variables.Queue_Content.setEditable(false);
