@@ -28,9 +28,9 @@ public class First_Window extends JFrame implements ActionListener
         Variables.TR_Panel.setLayout(new GridLayout(3, 1));
         Variables.TR_Panel.add(Variables.TR_Text_Area);
         Variables.TR_Panel.add(Variables.TR_Enter);
-        Variables.TR_Panel.add(Variables.test); //this will change from time to time, meaning that we will remove it sometimes and other times we will keep it  
+        Variables.TR_Panel.add(Variables.Help); //this will change from time to time, meaning that we will remove it sometimes and other times we will keep it  
         Variables.TR_Enter.addActionListener(this);
-        Variables.test.addActionListener(this);        
+        Variables.Help.addActionListener(this);        
         Variables.Translator.add(Variables.TR_Panel);
         Variables.Translator.setVisible(true);
     }
@@ -44,25 +44,12 @@ public class First_Window extends JFrame implements ActionListener
     public void ActionSetter()
     {
         //////////////////////////////////////////////////////
-        //this button will be added to all panels
+        //these are the only buttons that we will need, not more unique buttons.
+        //possibly add more here later, but for now we only have three
         Variables.Remove.addActionListener(this);
-        //////////////////////////////////////////////////////
-        //create file button action listeners, "new file"
-        Variables.Folder_Path_Button.addActionListener(this);
-        Variables.File_Name_Button.addActionListener(this);
-        //////////////////////////////////////////////////////
-        //Adding a mthod to a file action listers, "make"
-        Variables.File_Button.addActionListener(this);
-        Variables.Return_Type_Button.addActionListener(this);
-        Variables.Method_Name_Button.addActionListener(this);
-        //////////////////////////////////////////////////////
-        //Adding content action listers, "say"
-        Variables.File_Path_Button.addActionListener(this);
-        Variables.File_Add_Content_Button.addActionListener(this);
-        //////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////
+        Variables.Path_Button.addActionListener(this);
+        Variables.Naming_Button1.addActionListener(this);
+        Variables.Naming_Button2.addActionListener(this);
         //////////////////////////////////////////////////////
     }
 
@@ -79,13 +66,14 @@ public class First_Window extends JFrame implements ActionListener
         }
     }
 
+    /**
+     * This code was imported from our other project
+     * we decided that since it was already there and still useable, why not just use it again
+     * Read some text from the resource file to display in the JTextArea.
+     */
     public void Help() 
     {
-        /**
-         * This code was imported from our other project
-         * we decided that since it was already there and still useable, why not just use it again
-         * Read some text from the resource file to display in the JTextArea.
-         */
+
         try {
             Variables.Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
         } catch (IOException e) {
@@ -102,16 +90,16 @@ public class First_Window extends JFrame implements ActionListener
         if (e.getSource() == Variables.TR_Enter) 
         {
             ActionSetter(); //this will set all the action listers for all the panel buttons
-            Generic_Methods.Panel_Name_Setter(); //this is used to set names of panels so for later arguments
             Generic_Methods.Input_Parsing(Variables.User_Input); //Used in our queue so that commands will be put in the correct order
             Generic_Methods.Translation();//calles the method works out what commands to run
         }
-        else if (e.getSource() == Variables.test)
+        else if (e.getSource() == Variables.Help)
         {
             Help();
         }
         else if (e.getSource() == Variables.Remove)
         {
+            Generic_Methods.Text_Cleaner(); //this will be called every time we move onto a new command as we need clean fields every time
             Queue_Check();
 			Generic_Methods.Translation(); //called again to run the next command
         }
