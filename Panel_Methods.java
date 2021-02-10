@@ -46,23 +46,23 @@ public class Panel_Methods
 		Generic_Methods.Text_Box_Format_Method(Variables.Text_Area_Paramater1);
 
 		JP.add(Variables.Naming_Button1);
-		//We disable these buttons so that the user can not do them out of order
-		//They are re-enabled once the user clicks on the previous one
+		//We disable buttons so that the user can't go out of order. They are re-enabled once the user clicks on the previous one
 		Variables.Naming_Button1.setEnabled(false); 
 		JP.add(Variables.Text_Area_Paramater2);
 		Generic_Methods.Text_Box_Format_Method(Variables.Text_Area_Paramater2);
 
-		if (i == 4)
+		switch (i)
 		{
-			JP.add(Variables.Naming_Button2);
-			Variables.Naming_Button2.setEnabled(false);
-			JP.add(Variables.Text_Area_Paramater3);
-			Generic_Methods.Text_Box_Format_Method(Variables.Text_Area_Paramater3);
+			case 4:
+				JP.add(Variables.Naming_Button2);
+				Variables.Naming_Button2.setEnabled(false);
+				JP.add(Variables.Text_Area_Paramater3);
+				Generic_Methods.Text_Box_Format_Method(Variables.Text_Area_Paramater3);
 		}
 
 		JP.add(Variables.Remove);
 		Variables.Remove.setEnabled(false);
-		
+
 		JP.add(Variables.Queue_Content);
 		Generic_Methods.Text_Box_Format_Method(Variables.Queue_Content);
 		Variables.Queue_Content.setEditable(false);
