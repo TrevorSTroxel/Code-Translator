@@ -20,7 +20,7 @@ import javax.swing.JTextArea;
  */
 public class Variables 
 {
-    //these variables may change soon enough. These are unique enough that we may just leave them be
+    // these variables may change soon enough. These are unique enough that we may just leave them be
     // These variables are for creating the starting window
     public static JFrame Translator = new JFrame("Code Translator: Learn code by using english");
     public static JPanel TR_Panel = new JPanel();
@@ -44,14 +44,10 @@ public class Variables
     public static JButton Naming_Button2 = new JButton("Click this once you have entered a name 2");
 
     //Where the users inputs for the different text fields will go
-    public static JTextArea Text_Area_Paramater1 = new JTextArea(1,20);
-    public static JTextArea Text_Area_Paramater2 = new JTextArea(1,20);
-    public static JTextArea Text_Area_Paramater3 = new JTextArea(1,20);
+    public static JTextArea Text_Area_Paramater1 = new JTextArea(1,20), Text_Area_Paramater2 = new JTextArea(1,20), Text_Area_Paramater3 = new JTextArea(1,20);
 
     //something to store the text results in
-    public static String Paramater1 = new String();
-    public static String Paramater2 = new String();
-    public static String Paramater3 = new String();
+    public static String Paramater1 = new String(), Paramater2 = new String(), Paramater3 = new String();
 
     //This JLabel will be used to display to the user what the order of operations is
     //This helps them keep track of what is happening, and it helps us programmers keep track of everything happening
@@ -66,4 +62,5 @@ public class Variables
     public static JPanel Method_Panel = new JPanel();
     //Adding content panel
     public static JPanel Content_Panel = new JPanel();
+
 }

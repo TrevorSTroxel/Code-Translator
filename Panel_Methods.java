@@ -7,10 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.GridLayout;
-import java.awt.Dimension;
-import java.awt.Font;
-import javax.swing.JScrollPane;
-
 
 public class Panel_Methods 
 {
@@ -26,33 +22,11 @@ public class Panel_Methods
 		Variables.Input_Window.setSize(700, 700);
 		
 		Variables.Input_Window.add(JP); //adds the correct JPanel depending on what the user wants
-		Variables.Input_Window.setLocation(null);
+		Variables.Input_Window.setLocationRelativeTo(null);
 		
 		Variables.Input_Window.setVisible(true);
 		Variables.Input_Window.getContentPane().validate();
 		Variables.Input_Window.repaint();
-	}
-
-	/**
-	 * Sets up the window for the user to read the instructions
-	 * Imported from our old code, as this is still reauseable.
-	 * Did not want to re-invent the wheel
-	 */
-	public static void Help_Settings()
-	{
-		Variables.Instructions.setEditable(false); // the user can't edit the text
-        Font f = new Font("Times New Roman", Font.BOLD, 16); // this sets up the style of the text for the new window
-        Variables.Instructions.setFont(f); // sets the style of the text
-        JScrollPane iscrollPane = new JScrollPane(Variables.Instructions); // we have a large txt document, so this is
-                                                                           // used to see all the contents of it
-        iscrollPane.setPreferredSize(new Dimension(650, 500)); // sets up how much room is seen on the text file
-        Variables.Help_Panel.add(iscrollPane);
-        Variables.Help_Panel.setEnabled(true);
-
-        Variables.Input_Window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        Variables.Input_Window.setSize(700, 700);
-        Variables.Input_Window.add(Variables.Help_Panel);
-        Variables.Input_Window.setVisible(true);
 	}
 
 	/**
