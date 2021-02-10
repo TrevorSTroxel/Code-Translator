@@ -1,6 +1,6 @@
 /**
  * @author Trevor Troxel & Abed Abualkheir
- * @version 2.0
+ * @version 3.0
  */
 import javax.swing.JFileChooser;
 import javax.swing.JTextArea;

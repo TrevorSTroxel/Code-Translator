@@ -1,7 +1,7 @@
 
 /**
  * @author Trevor Troxel & Abed Abualkheir
- * @version 2.0
+ * @version 3.0
  */
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -34,7 +34,7 @@ public class Panel_Methods
 
 	/**
 	 * Sets up the window for the user to read the instructions
-	 * Imported from our old code, as this is still reauseable
+	 * Imported from our old code, as this is still reauseable.
 	 * Did not want to re-invent the wheel
 	 */
 	public static void Help_Settings()
@@ -70,11 +70,15 @@ public class Panel_Methods
 		JP.add(Variables.Text_Area_Paramater1);
 
 		JP.add(Variables.Naming_Button1);
+		//We disable these buttons so that the user can not do them out of order
+		//They are re-enabled once the user clicks on the previous one
+		Variables.Naming_Button1.setEnabled(false); 
 		JP.add(Variables.Text_Area_Paramater2);
 
 		if (i == 4)
 		{
 			JP.add(Variables.Naming_Button2);
+			Variables.Naming_Button2.setEnabled(false);
 			JP.add(Variables.Text_Area_Paramater3);
 		}
 

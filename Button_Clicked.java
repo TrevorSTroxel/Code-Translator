@@ -1,6 +1,6 @@
 /**
  * @author Trevor Troxel & Abed Abualkheir
- * @version 2.0
+ * @version 3.0
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,12 +16,9 @@ public class Button_Clicked implements ActionListener
     public void actionPerformed(ActionEvent e) 
     {
 		/**
-		 * These new generics work correctly, and my other paramaters are also working as intended
-		 * next step is to basically just have generics in my variable file.
-		 * Reason why we do that is because it is 
-		 * 1. easier to program and to help clear up some coding space for us
-		 * 2. gives us less confusion on the naming scheme for a lot of these parmaters
-		 * 3. When we actually need to have a unique buttons and jtextareas, it will be a lot more noticable for us
+		 * Since we have switched over to generics vaziables insteads of having serveral unique functions,
+		 * This file is now much more manageable to use now.
+		 * This is subject to change, but for the moment this is a easy to manage file
 		 */
 		if (e.getSource() == Variables.Path_Button)
 		{
