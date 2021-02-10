@@ -15,24 +15,24 @@ public class Generic_Methods
 	//used to seperate the commands that the user inputs
     public static void Translation()
     {
-        if (Variables.Order_Of_Commands.peek().equals("new file"))
-        {
-			//This will be for File creation
-			Panel_Methods.Panel_Settings(Variables.Folder_Panel, 3);
-            Panel_Methods.Input_Window(Variables.Folder_Panel); //sets the second window panel to the correct one
-        }
-		else if (Variables.Order_Of_Commands.peek().equals("make")) //add more paramaters
-        {
-			//This is for adding methods to files
-			Panel_Methods.Panel_Settings(Variables.Method_Panel, 4);
-			Panel_Methods.Input_Window(Variables.Method_Panel); //calles the method to get the second window
-        }
-        else if (Variables.Order_Of_Commands.peek().equals("say")) //add mkore paramaters
-        {
-			//this is for add any for of content to a method found within a file
-			Panel_Methods.Panel_Settings(Variables.Content_Panel, 4);
-			Panel_Methods.Input_Window(Variables.Content_Panel); //calles the method to get the second window
-        }
+		switch(Variables.Order_Of_Commands.peek())
+		{
+			case "new file":
+				//This will be for File creation
+				Panel_Methods.Panel_Settings(Variables.Folder_Panel, 3);
+				Panel_Methods.Input_Window(Variables.Folder_Panel); //sets the second window panel to the correct one
+				break;
+			case "make":
+				//This is for adding methods to files
+				Panel_Methods.Panel_Settings(Variables.Method_Panel, 4);
+				Panel_Methods.Input_Window(Variables.Method_Panel); //calles the method to get the second window
+				break;
+			case "say":
+				//this is for add any for of content to a method found within a file
+				Panel_Methods.Panel_Settings(Variables.Content_Panel, 4);
+				Panel_Methods.Input_Window(Variables.Content_Panel); //calles the method to get the second window
+				break;
+		}
     }
 
 	/**
@@ -44,9 +44,6 @@ public class Generic_Methods
 	 */
 	public static void Input_Parsing(String User_Input)
 	{
-		//possibly think about making an array list and then putting all that content inside a jtextarea
-		//that way when one command is done, it removes it from the list and will update that for the user
-
 		//Creates a file
 		if (User_Input.contains("new file"))
 		{
@@ -98,24 +95,23 @@ public class Generic_Methods
 	//Allows the user to select a location
 	public static void Location(JTextArea JTA, int i) 
 	{
-		if (i == 1) //this is used for if the user must select a folder
+		JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory()); //this opens up a crude file explorer for the user to use
+		switch (i)
 		{
-			JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory()); //this opens up a crude file explorer for the user to use
-			j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); //this makes it so that they can only select folder locations
-			if (j.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) //this checks to make sure that the option you choose was valid
-			{
-				JTA.setText(j.getSelectedFile().getAbsolutePath()); //this writes the file path to the text area for the user to see
-			}
-		}
-
-		else if (i == 2) //used to select files
-		{
-			JFileChooser j = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-			j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-			if (j.showOpenDialog(null) == JFileChooser.APPROVE_OPTION);
-			{
-				JTA.setText(j.getSelectedFile().getAbsolutePath());
-			}
+			case 1:
+				j.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); //this makes it so that they can only select folder locations
+				if (j.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) //this checks to make sure that the option you choose was valid
+				{
+					JTA.setText(j.getSelectedFile().getAbsolutePath()); //this writes the file path to the text area for the user to see
+				}
+				break;
+			case 2:
+				j.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+				if (j.showOpenDialog(null) == JFileChooser.APPROVE_OPTION);
+				{
+					JTA.setText(j.getSelectedFile().getAbsolutePath());
+				}
+				break;
 		}
     }
 

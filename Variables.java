@@ -35,6 +35,8 @@ public class Variables
     ////////////////////////////////////////////////////////////////////////
     public static Queue<String> Order_Of_Commands = new LinkedList<>(); //used to store all the commands that the user has put into it
     public static ArrayList<String> Storage = new ArrayList<String>();
+    public static Boolean Argument = true;
+    public static String ArgumentString = new String();
     public static JFrame Input_Window = new JFrame(); //The secondary window that is reused several times
     public static JButton Remove = new JButton("Click this button to move onto the next command"); //pressing this will remove the top element from the queue to move to the next command
     ////////////////////////////////////////////////////////////////////////
