@@ -49,20 +49,27 @@ public class Generic_Methods
 	 */
 	public static void Input_Parsing(String User_Input)
 	{
+		int i = 0; //this will be used to make a list to the JLabel, making it easier for users to understand
 		//if the user wants to make a new file
 		if (User_Input.contains("new file"))
 		{
+			i++;
 			Variables.Order_Of_Commands.add("new file");
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + i + ". Creating a new file"); //what this does is make a list from the commands the user wants
 		}
 		//if the user wants to make a method
 		if (User_Input.contains("make")) //may want to change later to be something easier to type in a nromal sentence, but for now this is what we have
 		{
+			i++;
 			Variables.Order_Of_Commands.add("make");
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + i + ". Adding a method the chosen file");
 		}
 		//this is subject to change for what the user can say to trigger this, but this will be where the user asks where to put stuff
 		if (User_Input.contains("say"))
 		{
+			i++;
 			Variables.Order_Of_Commands.add("say");
+			Variables.Queue_Content.setText(Variables.Queue_Content.getText() + i + ". Adding content to add to a method");
 		}
 	}
 
