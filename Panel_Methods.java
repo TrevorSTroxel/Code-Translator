@@ -23,9 +23,10 @@ public class Panel_Methods
 	{
 		Variables.Input_Window.getContentPane().removeAll();// This is to make sure that the window is reuseable every time
 		Variables.Input_Window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //the new window only closes that window and not others
-		Variables.Input_Window.setSize(500, 500);
+		Variables.Input_Window.setSize(700, 700);
 		
 		Variables.Input_Window.add(JP); //adds the correct JPanel depending on what the user wants
+		Variables.Input_Window.setLocation(null);
 		
 		Variables.Input_Window.setVisible(true);
 		Variables.Input_Window.getContentPane().validate();
@@ -68,23 +69,27 @@ public class Panel_Methods
 
 		JP.add(Variables.Path_Button);
 		JP.add(Variables.Text_Area_Paramater1);
+		Generic_Methods.Text_Box_Format_Method(Variables.Text_Area_Paramater1);
 
 		JP.add(Variables.Naming_Button1);
 		//We disable these buttons so that the user can not do them out of order
 		//They are re-enabled once the user clicks on the previous one
 		Variables.Naming_Button1.setEnabled(false); 
 		JP.add(Variables.Text_Area_Paramater2);
+		Generic_Methods.Text_Box_Format_Method(Variables.Text_Area_Paramater2);
 
 		if (i == 4)
 		{
 			JP.add(Variables.Naming_Button2);
 			Variables.Naming_Button2.setEnabled(false);
 			JP.add(Variables.Text_Area_Paramater3);
+			Generic_Methods.Text_Box_Format_Method(Variables.Text_Area_Paramater3);
 		}
 
 		JP.add(Variables.Remove);
 		Variables.Remove.setEnabled(false);
 		JP.add(Variables.Queue_Content);
-		Variables.Queue_Content.setEnabled(false);
+		Generic_Methods.Text_Box_Format_Method(Variables.Queue_Content);
+		Variables.Queue_Content.setEditable(false);
 	}
 }

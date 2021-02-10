@@ -35,6 +35,7 @@ public class First_Window extends JFrame implements ActionListener
         Variables.Help.addActionListener(this);     
 
         Variables.Translator.add(Variables.TR_Panel);
+        Variables.Translator.setLocation(null); //sets it in the middle of the screen
         Variables.Translator.setVisible(true);
     }
 

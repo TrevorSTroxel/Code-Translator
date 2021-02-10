@@ -5,6 +5,7 @@
 import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import javax.swing.filechooser.FileSystemView;
+import java.awt.*;
 
 // Method storage
 public class Generic_Methods
@@ -102,8 +103,7 @@ public class Generic_Methods
 
 	/**
 	 * This method will be used for cleaning out the JTextAreas
-	 * Everytime that they are called apon to be used again they will be cleaned out here
-	 * 
+	 * Everytime that they are called apon to be used again they will be cleaned
 	 */
 	public static void Text_Cleaner()
 	{
@@ -116,5 +116,17 @@ public class Generic_Methods
 		Variables.Text_Area_Paramater3.selectAll();
 		Variables.Text_Area_Paramater3.replaceSelection("");
 	}
+
+	/**
+	 * Imported from old code.
+	 * Just helps clean up the text box areas to look nicer.
+	 * Plus its easy to change, add or remove things from here
+     * @param JTF
+     */
+    public static void Text_Box_Format_Method(JTextArea JTF) 
+	{
+        JTF.setLineWrap(true); //wraps any text around to fit inside the box
+        JTF.setFont(new Font("Times New Roman", Font.BOLD, 18));
+    }
 
 }
