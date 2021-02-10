@@ -18,8 +18,8 @@ import javax.swing.JScrollPane;
 
 public class First_Window extends JFrame implements ActionListener 
 {
-    Button_Clicked BC = new Button_Clicked();
-    private static final long serialVersionUID = 1L; //makes VSCode
+    Button_Clicked BC = new Button_Clicked(); //Only time we will need to make an Object, all other times are will be static
+    private static final long serialVersionUID = 1L; //makes VSCode happy
     
     /**
      * Used to set up the first window the user sees
@@ -83,7 +83,6 @@ public class First_Window extends JFrame implements ActionListener
      */
     public void Help() 
     {
-
         try 
         {
             Variables.Instructions.read(new InputStreamReader(getClass().getResourceAsStream("/help.txt")), null);
